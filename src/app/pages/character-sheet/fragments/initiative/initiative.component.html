@@ -1,0 +1,27 @@
+<form [formGroup]="initiativeForm">
+  <app-title fullTitle="Armour Class" shortTitle="Touch" />
+  <mat-form-field class="no-bottom-margin">
+    <input type="number" matInput formControlName="touch" />
+  </mat-form-field>
+  <app-title class="span-2" fullTitle="Armour Class" shortTitle="Flat-Footed" />
+  <mat-form-field class="no-bottom-margin">
+    <input type="number" matInput formControlName="flatFooted" />
+  </mat-form-field>
+  <ng-container formGroupName="initiative">
+    <app-title fullTitle="Modifier" shortTitle="Initiative" />
+    <mat-form-field class="no-bottom-margin">
+      <mat-label>Total</mat-label>
+      <input type="number" matInput formControlName="total" />
+    </mat-form-field>
+    <small>=</small>
+    <mat-form-field class="no-bottom-margin">
+      <mat-label>Dex Mod</mat-label>
+      <input type="number" matInput formControlName="dexterityModifier" />
+    </mat-form-field>
+    <small>+</small>
+    <mat-form-field class="no-bottom-margin">
+      <mat-label>Misc Mod</mat-label>
+      <input type="number" matInput formControlName="miscModifier" />
+    </mat-form-field>
+  </ng-container>
+</form>

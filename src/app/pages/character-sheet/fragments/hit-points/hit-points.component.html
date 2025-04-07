@@ -1,0 +1,111 @@
+<form [formGroup]="hitPointsForm">
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Total</th>
+        <th>Wounds / Current HP</th>
+        <th>Non-Lethal Damage</th>
+        <th>Speed</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><app-title fullTitle="Hit Points" shortTitle="HP" /></td>
+        <td>
+          <mat-form-field class="no-bottom-margin">
+            <input type="number" matInput formControlName="totalHitPoints" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="no-bottom-margin">
+            <input type="number" matInput formControlName="currentHitPoints" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="no-bottom-margin">
+            <input type="number" matInput formControlName="nonLethalDamage" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="no-bottom-margin">
+            <input type="number" matInput formControlName="speed" />
+          </mat-form-field>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <table>
+    <thead>
+      <tr>
+        <th></th>
+        <th>Total</th>
+        <th class="small-table-column"></th>
+        <th>Armour Bonus</th>
+        <th>Shield Bonus</th>
+        <th>DEX Modifier</th>
+        <th>Size Modifier</th>
+        <th>Natural Armour</th>
+        <th>Deflection Modifier</th>
+        <th>Misc Modifier</th>
+        <th>Damage Reduction</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><app-title fullTitle="Armour Class" shortTitle="AC" /></td>
+        <td>
+          <mat-form-field class="no-bottom-margin">
+            <input type="number" matInput formControlName="totalArmourClass" />
+          </mat-form-field>
+        </td>
+        <td>= 10 +</td>
+        <td>
+          <mat-form-field class="no-bottom-margin">
+            <input type="number" matInput formControlName="armourBonus" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="no-bottom-margin">
+            <input type="number" matInput formControlName="shieldBonux" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="no-bottom-margin">
+            <input type="number" matInput formControlName="dexterityModifier" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="no-bottom-margin">
+            <input type="number" matInput formControlName="sizeModifier" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="no-bottom-margin">
+            <input type="number" matInput formControlName="naturalArmour" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="no-bottom-margin">
+            <input
+              type="number"
+              matInput
+              formControlName="deflectionModifier"
+            />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="no-bottom-margin">
+            <input type="number" matInput formControlName="miscModifier" />
+          </mat-form-field>
+        </td>
+        <td>
+          <mat-form-field class="no-bottom-margin">
+            <input type="number" matInput formControlName="damageReduction" />
+          </mat-form-field>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</form>

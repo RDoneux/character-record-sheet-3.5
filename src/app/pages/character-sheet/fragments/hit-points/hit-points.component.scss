@@ -1,0 +1,31 @@
+form {
+  // display: grid;
+  // grid-template-columns: repeat(10, 1fr);
+  // gap: 10px;
+
+  table {
+    width: 100%;
+    table-layout: fixed;
+
+    th {
+      font-size: 12px;
+      &.small-table-column {
+        width: 50px;
+      }
+      &:first-child {
+        width: 100px;
+      }
+    }
+
+    mat-form-field {
+      width: 100%;
+    }
+  }
+  // .span-2 {
+  //     grid-column: span 2;
+  // }
+
+  // app-title {
+  //     grid-column: 1 / span 2;
+  // }
+}

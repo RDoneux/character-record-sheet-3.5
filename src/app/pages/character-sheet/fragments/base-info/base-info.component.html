@@ -1,0 +1,84 @@
+<form [formGroup]="baseInfoForm">
+  <mat-form-field class="half-width">
+    <mat-label>Character Name</mat-label>
+    <input matInput formControlName="characterName" />
+  </mat-form-field>
+
+  <mat-form-field class="half-width">
+    <mat-label>Player Name</mat-label>
+    <input matInput formControlName="playerName" />
+  </mat-form-field>
+
+  <mat-form-field class="quarter-width">
+    <mat-label>Class</mat-label>
+    <input matInput formControlName="class" />
+  </mat-form-field>
+
+  <mat-form-field class="quarter-width">
+    <mat-label>Level</mat-label>
+    <input min="0" type="number" matInput formControlName="level" />
+  </mat-form-field>
+
+  <mat-form-field class="quarter-width">
+    <mat-label>Race</mat-label>
+    <input matInput formControlName="race" />
+  </mat-form-field>
+
+  <mat-form-field class="one-third-width">
+    <mat-label>Alignment</mat-label>
+    <mat-select formControlName="alignment">
+      @for(alignment of alignments; track alignment) {
+      <mat-option [value]="alignment">
+        {{ alignment }}
+      </mat-option>
+      }
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field class="one-third-width">
+    <mat-label>Deity</mat-label>
+    <input matInput formControlName="deity" />
+  </mat-form-field>
+
+  <mat-form-field class="one-third-width">
+    <mat-label>Size</mat-label>
+    <input matInput formControlName="size" />
+  </mat-form-field>
+
+  <mat-form-field class="one-third-width">
+    <mat-label>Age</mat-label>
+    <input type="number" matInput formControlName="age" />
+  </mat-form-field>
+
+  <mat-form-field class="one-third-width">
+    <mat-label>Gender</mat-label>
+    <input matInput formControlName="gender" />
+  </mat-form-field>
+
+  <mat-form-field class="one-third-width">
+    <mat-label>Height</mat-label>
+    <input type="number" matInput formControlName="height" />
+    <mat-hint>cm</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field class="one-third-width">
+    <mat-label>Weight</mat-label>
+    <input type="number" matInput formControlName="weight" />
+    <mat-hint>kg</mat-hint>
+  </mat-form-field>
+
+  <mat-form-field class="one-third-width">
+    <mat-label>Eye Colour</mat-label>
+    <input matInput formControlName="eyeColour" />
+  </mat-form-field>
+
+  <mat-form-field class="one-third-width">
+    <mat-label>Hair Colour</mat-label>
+    <input matInput formControlName="hairColour" />
+  </mat-form-field>
+
+  <mat-form-field class="one-third-width">
+    <mat-label>Skin Colour</mat-label>
+    <input matInput formControlName="skinColour" />
+  </mat-form-field>
+</form>

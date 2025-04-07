@@ -1,0 +1,25 @@
+form {
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  gap: 8px;
+
+  .half-width {
+    grid-column: span 8;
+  }
+
+  .quarter-width {
+    grid-column: span 4;
+  }
+
+  .one-third-width {
+    grid-column: span 2;
+  }
+
+  mat-form-field {
+    overflow: visible !important;
+  }
+  
+  .mat-form-field-wrapper {
+    overflow: visible !important;
+  }
+}
