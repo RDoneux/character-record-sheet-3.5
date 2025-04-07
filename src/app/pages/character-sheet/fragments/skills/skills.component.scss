@@ -1,32 +1,57 @@
-table {
-  width: 100%;
-  table-layout: fixed;
+// table {
+//   width: 100%;
+//   table-layout: fixed;
 
+//   mat-form-field {
+//     width: 100%;
+//   }
 
+//   th:not(.title) {
+//     text-align: center;
+//     // width: 14%;
+//     // width: 20%;
+//     // background: pink;
+//     // width:100%;
+//     // vertical-align: middle;
+//   }
+//   th:first-child {
+//     line-height: 35px;
+//   }
+
+//   .prioritise-width {
+//     width: 45%
+//   }
+// }
+
+.container {
+  display: grid;
+  grid-template-columns: 40px 1fr repeat(5, 70px);
+  gap: 8px;
+
+  align-items: center;
+
+  p {
+    margin: 0;
+    &:not(.skill) {
+      text-align: center;
+    }
+  }
+  .title {
+    grid-column: span 6;
+    text-align: center;
+  }
   mat-form-field {
     width: 100%;
-  }
 
-  th:not(.title) {
-    text-align: center;
-    // width: 14%;
-    // width: 20%;
-    // background: pink;
-    // width:100%;
-    // vertical-align: middle;
-  }
-  th:first-child {
-    line-height: 35px;
   }
 
   .vertical-text {
-    width:40px;
+    width: 40px;
     writing-mode: vertical-rl;
     transform: rotate(180deg);
     vertical-align: middle;
-  }
-
-  .prioritise-width {
-    width: 45%
+    text-align: center;
+    grid-row: 1 / span 2;
+    line-height: 40px;
   }
 }

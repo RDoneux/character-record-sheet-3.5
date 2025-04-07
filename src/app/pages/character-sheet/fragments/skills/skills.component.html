@@ -1,47 +1,43 @@
 <form [formGroup]="skillsForm">
-  <table>
-    <thead>
-      <tr>
-        <th class="vertical-text" rowspan="2">Class Skill?</th>
-        <th colspan="6" class="title">Skills</th>
-      </tr>
-      <tr>
-        <th class="prioritise-width">Skill Name</th>
-        <th>Key Ability</th>
-        <th>Skill Modifier</th>
-        <th>Ability Modifier</th>
-        <th>Ranks</th>
-        <th>Misc Modifier</th>
-      </tr>
-    </thead>
-    <tbody>
-      @for(skill of skills; track skill) {
-      <tr [formGroupName]="skill">
-        <td><mat-checkbox formControlName="isClassSkill" /></td>
-        <td>{{ convertCamelCaseToNormalText(skill) }}</td>
-        <td>{{ getSkillAbility(skill) }}</td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input matInput formControlName="skillModifier" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input matInput formControlName="abilityModifier" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input matInput formControlName="ranks" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input matInput formControlName="miscModifier" />
-          </mat-form-field>
-        </td>
-      </tr>
-      }
-    </tbody>
-  </table>
+  <div class="container">
+    <!-- <div class="header"> -->
+    <!-- <div> -->
+    <p class="vertical-text">Class Skill?</p>
+    <p class="title">Skills</p>
+    <!-- </div> -->
+    <p class="skill">Skill Name</p>
+    <p>Key Ability</p>
+    <p>Skill Modifier</p>
+    <p>Ability Modifier</p>
+    <p>Ranks</p>
+    <p>Misc Modifier</p>
+    <!-- </div> -->
+    @for(skill of skills; track skill) {
+    <ng-container [formGroupName]="skill">
+      <p><mat-checkbox formControlName="isClassSkill" /></p>
+      <p class="skill">{{ convertCamelCaseToNormalText(skill) }}</p>
+      <p>{{ getSkillAbility(skill) }}</p>
+      <p>
+        <mat-form-field class="no-bottom-margin">
+          <input matInput formControlName="skillModifier" />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="no-bottom-margin">
+          <input matInput formControlName="abilityModifier" />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="no-bottom-margin">
+          <input matInput formControlName="ranks" />
+        </mat-form-field>
+      </p>
+      <p>
+        <mat-form-field class="no-bottom-margin">
+          <input matInput formControlName="miscModifier" />
+        </mat-form-field>
+      </p>
+    </ng-container>
+    }
+  </div>
 </form>
