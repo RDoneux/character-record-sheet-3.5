@@ -11,6 +11,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { debounceTime } from 'rxjs';
 import { TitleComponent } from '../../components/title/title.component';
+import { UtilsService } from '../../../../services/utils.service';
 
 @Component({
   selector: 'app-abilities',
@@ -28,7 +29,8 @@ export class AbilitiesComponent {
 
   constructor(
     private localStorage: LocalStorageService,
-    private formBuilder: FormBuilderService
+    private formBuilder: FormBuilderService,
+    private utils: UtilsService,
   ) {}
 
   abilitiesForm!: FormGroup<IAbilitiesForm>;
@@ -50,7 +52,7 @@ export class AbilitiesComponent {
     });
   }
 
-  abilityAbbreviation(ability: string) {
-    return ability.substring(0, 3).toUpperCase();
+  getAbilityAbbreviation(ability: string): string {
+    return this.utils.abilityAbbreviation(ability);
   }
 }

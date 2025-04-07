@@ -1,0 +1,32 @@
+table {
+  width: 100%;
+  table-layout: fixed;
+
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  th:not(.title) {
+    text-align: center;
+    // width: 14%;
+    // width: 20%;
+    // background: pink;
+    // width:100%;
+    // vertical-align: middle;
+  }
+  th:first-child {
+    line-height: 35px;
+  }
+
+  .vertical-text {
+    width:40px;
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+    vertical-align: middle;
+  }
+
+  .prioritise-width {
+    width: 45%
+  }
+}
