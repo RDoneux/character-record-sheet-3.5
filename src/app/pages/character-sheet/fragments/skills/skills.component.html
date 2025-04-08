@@ -39,12 +39,23 @@
         </mat-form-field>
       </p>
     </ng-container>
-    } @else {
-    @for(nestedSkill of getFormGroup(skill); track nestedSkill) {
+    } @else { @for(nestedSkill of getFormGroup(skill); track nestedSkill) {
     <ng-container [formGroupName]="skill">
       <ng-container [formGroupName]="nestedSkill">
         <p><mat-checkbox formControlName="isClassSkill" /></p>
-        <p class="skill">{{ convertCamelCaseToNormalText(skill) }}</p>
+        <span class="skill specialisation">
+          <p>{{ convertCamelCaseToNormalText(skill) }}</p>
+          <mat-form-field class="no-bottom-margin min-nowrap-width">
+            <input matInput formControlName="specialisation" />
+            <span matSuffix>
+              @if($index === getFormGroup(skill).length -1) {
+              <mat-icon (click)="addSkill(skill, nestedSkill)">add</mat-icon>
+              } @if(getFormGroup(skill).length > 1) {
+              <mat-icon (click)="deleteSkill(skill, nestedSkill)">delete</mat-icon>
+              }
+            </span>
+          </mat-form-field>
+        </span>
         <p>{{ getSkillAbility(skill) }}</p>
         <p>
           <mat-form-field class="no-bottom-margin">

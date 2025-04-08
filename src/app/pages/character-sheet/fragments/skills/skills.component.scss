@@ -1,31 +1,6 @@
-// table {
-//   width: 100%;
-//   table-layout: fixed;
-
-//   mat-form-field {
-//     width: 100%;
-//   }
-
-//   th:not(.title) {
-//     text-align: center;
-//     // width: 14%;
-//     // width: 20%;
-//     // background: pink;
-//     // width:100%;
-//     // vertical-align: middle;
-//   }
-//   th:first-child {
-//     line-height: 35px;
-//   }
-
-//   .prioritise-width {
-//     width: 45%
-//   }
-// }
-
 .container {
   display: grid;
-  grid-template-columns: 40px 1fr repeat(5, 70px);
+  grid-template-columns: 40px 1fr 50px repeat(4, 70px);
   gap: 8px;
 
   align-items: center;
@@ -42,7 +17,9 @@
   }
   mat-form-field {
     width: 100%;
-
+    &.min-nowrap-width{
+      width: 260px;
+    }
   }
 
   .vertical-text {
@@ -53,5 +30,13 @@
     text-align: center;
     grid-row: 1 / span 2;
     line-height: 40px;
+  }
+
+  .specialisation{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    justify-content: space-between;
   }
 }

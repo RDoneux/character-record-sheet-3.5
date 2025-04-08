@@ -13,6 +13,7 @@ export class FormBuilderService {
       if (
         value !== null &&
         typeof value === 'object'
+        // !Array.isArray(value)
       ) {
         // If the value is an object, recursively create a nested FormGroup
         formGroup[key] = this.buildForm(value);

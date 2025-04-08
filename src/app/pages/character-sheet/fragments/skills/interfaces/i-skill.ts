@@ -10,7 +10,7 @@ interface ISkill {
   trainedOnly: boolean | null;
   isClassSkill: boolean | null;
   armourCheckPenalty: number | null;
-  specialisation?: string | null;
+  specialisation: string | null;
 }
 
 export interface ISkills {
@@ -19,7 +19,7 @@ export interface ISkills {
   bluff: ISkill | null;
   climb: ISkill | null;
   concentration: ISkill | null;
-    craft: ISkill[] | null;
+  craft: ISkill[] | null;
   decipherScript: ISkill | null;
   diplomacy: ISkill | null;
   disableDevice: ISkill | null;
@@ -32,12 +32,12 @@ export interface ISkills {
   hide: ISkill | null;
   intimidate: ISkill | null;
   jump: ISkill | null;
-  //   knowledge: ISkill[] | null;
+  knowledge: ISkill[] | null;
   listen: ISkill | null;
   moveSilently: ISkill | null;
   openLock: ISkill | null;
-  //   perform: ISkill[] | null;
-  //   profession: ISkill[] | null;
+  perform: ISkill[] | null;
+  profession: ISkill[] | null;
   ride: ISkill | null;
   search: ISkill | null;
   senseMotive: ISkill | null;
@@ -49,11 +49,11 @@ export interface ISkills {
   tumble: ISkill | null;
   useMagicDevice: ISkill | null;
   useRope: ISkill | null;
-  //   other: ISkill[] | null;
+  other: ISkill[] | null;
 }
 export interface ISkillsForm extends FormGroupType<ISkills> {}
 
-const SKILL_DEFAULT: ISkill = {
+export const SKILL_DEFAULT: ISkill = {
   keyAbility: null,
   skillModifier: null,
   abilityModifier: null,
@@ -62,6 +62,7 @@ const SKILL_DEFAULT: ISkill = {
   trainedOnly: null,
   isClassSkill: null,
   armourCheckPenalty: null,
+  specialisation: null,
 };
 
 export const SKILLS_DEFAULT: ISkills = {
@@ -70,7 +71,7 @@ export const SKILLS_DEFAULT: ISkills = {
   bluff: SKILL_DEFAULT,
   climb: SKILL_DEFAULT,
   concentration: SKILL_DEFAULT,
-    craft: [SKILL_DEFAULT, SKILL_DEFAULT],
+  craft: [SKILL_DEFAULT],
   decipherScript: SKILL_DEFAULT,
   diplomacy: SKILL_DEFAULT,
   disableDevice: SKILL_DEFAULT,
@@ -83,12 +84,12 @@ export const SKILLS_DEFAULT: ISkills = {
   hide: SKILL_DEFAULT,
   intimidate: SKILL_DEFAULT,
   jump: SKILL_DEFAULT,
-  //   knowledge: [SKILL_DEFAULT],
+  knowledge: [SKILL_DEFAULT],
   listen: SKILL_DEFAULT,
   moveSilently: SKILL_DEFAULT,
   openLock: SKILL_DEFAULT,
-  //   perform: [SKILL_DEFAULT],
-  //   profession: [SKILL_DEFAULT],
+  perform: [SKILL_DEFAULT],
+  profession: [SKILL_DEFAULT],
   ride: SKILL_DEFAULT,
   search: SKILL_DEFAULT,
   senseMotive: SKILL_DEFAULT,
@@ -100,7 +101,7 @@ export const SKILLS_DEFAULT: ISkills = {
   tumble: SKILL_DEFAULT,
   useMagicDevice: SKILL_DEFAULT,
   useRope: SKILL_DEFAULT,
-  //   other: [SKILL_DEFAULT],
+  other: [SKILL_DEFAULT],
 };
 
 export const SkillAbilityMap: { [key in keyof ISkills]: Ability } = {
@@ -136,4 +137,8 @@ export const SkillAbilityMap: { [key in keyof ISkills]: Ability } = {
   tumble: Ability.DEXTERITY,
   useMagicDevice: Ability.CHARISMA,
   useRope: Ability.DEXTERITY,
+  knowledge: Ability.INTELLIGENCE,
+  perform: Ability.CHARISMA,
+  profession: Ability.WISDOM,
+  other: Ability.INTELLIGENCE,
 };
