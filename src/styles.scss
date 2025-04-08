@@ -43,6 +43,8 @@ mat-form-field.no-bottom-margin .mat-mdc-form-field-subscript-wrapper {
 
 mat-form-field input[type="number"] {
   -moz-appearance: textfield; // For Firefox
+  appearance: textfield;
+  text-align: center;
 }
 
 mat-form-field input[type="number"]::-webkit-inner-spin-button,
@@ -50,20 +52,6 @@ mat-form-field input[type="number"]::-webkit-outer-spin-button {
   -webkit-appearance: none; // For WebKit browsers
   margin: 0; // Optional: Removes any margin
 }
-
-// mat-checkbox.no-border {
-//   border: none;
-//   margin: 0;
-//   padding: 0;
-
-//   div,
-//   input {
-//     margin: 0;
-//     padding: 0;
-//     width: 20px;
-//     height: 20px;
-//   }
-// }
 
 mat-checkbox.no-border {
   .mdc-checkbox {
