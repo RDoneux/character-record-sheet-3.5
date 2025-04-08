@@ -1,17 +1,13 @@
 <form [formGroup]="skillsForm">
   <div class="container">
-    <!-- <div class="header"> -->
-    <!-- <div> -->
     <p class="vertical-text">Class Skill?</p>
     <p class="title">Skills</p>
-    <!-- </div> -->
     <p class="skill">Skill Name</p>
     <p>Key Ability</p>
     <p>Skill Modifier</p>
     <p>Ability Modifier</p>
     <p>Ranks</p>
     <p>Misc Modifier</p>
-    <!-- </div> -->
     @for(skill of skills; track skill) {
     @if(skillsForm.get(skill)?.get('isClassSkill')) {
     <ng-container [formGroupName]="skill">

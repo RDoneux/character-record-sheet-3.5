@@ -4,6 +4,7 @@ import { AbilitiesComponent } from './fragments/abilities/abilities.component';
 import { HitPointsComponent } from './fragments/hit-points/hit-points.component';
 import { InitiativeComponent } from './fragments/initiative/initiative.component';
 import { SkillsComponent } from './fragments/skills/skills.component';
+import { SavingThrowsComponent } from './fragments/saving-throws/saving-throws.component';
 
 @Component({
   selector: 'app-character-sheet',
@@ -13,6 +14,7 @@ import { SkillsComponent } from './fragments/skills/skills.component';
     HitPointsComponent,
     InitiativeComponent,
     SkillsComponent,
+    SavingThrowsComponent
   ],
   templateUrl: './character-sheet.component.html',
   styleUrl: './character-sheet.component.scss',

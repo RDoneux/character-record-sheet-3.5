@@ -1,0 +1,68 @@
+<form [formGroup]="savingThrowsForm">
+  <table>
+    <thead>
+      <tr>
+        <th>Saving Throws</th>
+        <th>Total</th>
+        <th class="joining-column"></th>
+        <th>Base Save</th>
+        <th class="joining-column"></th>
+        <th>Ability Modifier</th>
+        <th class="joining-column"></th>
+        <th>Magic Modifier</th>
+        <th class="joining-column"></th>
+        <th>Misc Modifier</th>
+        <th class="joining-column"></th>
+        <th>Temporary Modifier</th>
+      </tr>
+    </thead>
+    <tbody>
+      @for(item of form; track item) {
+
+      <tr [formGroupName]="item">
+        <td>
+          <app-title
+            [shortTitle]="item | uppercase"
+            [fullTitle]="item | savingThrowAbilityMap"
+          />
+        </td>
+        <td>
+          <mat-form-field class="no-bottom-margin">
+            <input matInput formControlName="total" />
+          </mat-form-field>
+        </td>
+        <td>=</td>
+        <td>
+          <mat-form-field class="no-bottom-margin">
+            <input matInput formControlName="baseSave" />
+          </mat-form-field>
+        </td>
+        <td>+</td>
+        <td>
+          <mat-form-field class="no-bottom-margin">
+            <input matInput formControlName="abilityModifier" />
+          </mat-form-field>
+        </td>
+        <td>+</td>
+        <td>
+          <mat-form-field class="no-bottom-margin">
+            <input matInput formControlName="magicModifier" />
+          </mat-form-field>
+        </td>
+        <td>+</td>
+        <td>
+          <mat-form-field class="no-bottom-margin">
+            <input matInput formControlName="miscModifier" />
+          </mat-form-field>
+        </td>
+        <td>+</td>
+        <td>
+          <mat-form-field class="no-bottom-margin">
+            <input matInput formControlName="temporaryModifier" />
+          </mat-form-field>
+        </td>
+      </tr>
+      }
+    </tbody>
+  </table>
+</form>
