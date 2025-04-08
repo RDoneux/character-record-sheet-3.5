@@ -12,7 +12,6 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatCheckboxModule } from '@angular/material/checkbox';
 import { CommonModule } from '@angular/common';
-import { Ability } from '../abilities/interfaces/i-abilities';
 import { UtilsService } from '../../../../services/utils.service';
 
 @Component({
@@ -49,6 +48,8 @@ export class SkillsComponent {
       persistedSkills ? persistedSkills : SKILLS_DEFAULT
     );
 
+    console.log(this.skillsForm);
+
     this.skillsForm.valueChanges.subscribe(() => {
       this.localStorage.save<ISkills>(
         SkillsComponent.STORAGE_KEY,
@@ -65,5 +66,9 @@ export class SkillsComponent {
 
   convertCamelCaseToNormalText(camelCase: string): string {
     return this.utils.camelCaseToNormalText(camelCase);
+  }
+
+  getFormGroup(key: string): string[] {
+    return Object.keys((this.skillsForm.get(key) as FormGroup).controls);
   }
 }

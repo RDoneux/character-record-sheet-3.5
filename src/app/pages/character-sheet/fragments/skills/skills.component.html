@@ -13,6 +13,7 @@
     <p>Misc Modifier</p>
     <!-- </div> -->
     @for(skill of skills; track skill) {
+    @if(skillsForm.get(skill)?.get('isClassSkill')) {
     <ng-container [formGroupName]="skill">
       <p><mat-checkbox formControlName="isClassSkill" /></p>
       <p class="skill">{{ convertCamelCaseToNormalText(skill) }}</p>
@@ -38,6 +39,35 @@
         </mat-form-field>
       </p>
     </ng-container>
-    }
+    } @else {
+    @for(nestedSkill of getFormGroup(skill); track nestedSkill) {
+    <ng-container [formGroupName]="skill">
+      <ng-container [formGroupName]="nestedSkill">
+        <p><mat-checkbox formControlName="isClassSkill" /></p>
+        <p class="skill">{{ convertCamelCaseToNormalText(skill) }}</p>
+        <p>{{ getSkillAbility(skill) }}</p>
+        <p>
+          <mat-form-field class="no-bottom-margin">
+            <input matInput formControlName="skillModifier" />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="no-bottom-margin">
+            <input matInput formControlName="abilityModifier" />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="no-bottom-margin">
+            <input matInput formControlName="ranks" />
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field class="no-bottom-margin">
+            <input matInput formControlName="miscModifier" />
+          </mat-form-field>
+        </p>
+      </ng-container>
+    </ng-container>
+    } } }
   </div>
 </form>

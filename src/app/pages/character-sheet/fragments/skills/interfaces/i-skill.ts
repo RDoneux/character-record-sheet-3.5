@@ -19,7 +19,7 @@ export interface ISkills {
   bluff: ISkill | null;
   climb: ISkill | null;
   concentration: ISkill | null;
-  //   craft: ISkill[] | null;
+    craft: ISkill[] | null;
   decipherScript: ISkill | null;
   diplomacy: ISkill | null;
   disableDevice: ISkill | null;
@@ -70,7 +70,7 @@ export const SKILLS_DEFAULT: ISkills = {
   bluff: SKILL_DEFAULT,
   climb: SKILL_DEFAULT,
   concentration: SKILL_DEFAULT,
-  //   craft: [SKILL_DEFAULT],
+    craft: [SKILL_DEFAULT, SKILL_DEFAULT],
   decipherScript: SKILL_DEFAULT,
   diplomacy: SKILL_DEFAULT,
   disableDevice: SKILL_DEFAULT,
@@ -109,6 +109,7 @@ export const SkillAbilityMap: { [key in keyof ISkills]: Ability } = {
   bluff: Ability.CHARISMA,
   climb: Ability.STRENGTH,
   concentration: Ability.CONSTITUTION,
+  craft: Ability.INTELLIGENCE,
   decipherScript: Ability.INTELLIGENCE,
   diplomacy: Ability.CHARISMA,
   disableDevice: Ability.DEXTERITY,
