@@ -3,7 +3,7 @@
 
   display: grid;
   grid-template-columns: minmax(350px, 450px) minmax(450px, 0.8fr) 1fr;
-  grid-template-rows: auto auto auto auto 1fr;
+  grid-template-rows: auto auto auto auto auto 1fr;
   gap: 20px;
   align-items: center;;
 
@@ -26,10 +26,14 @@
 
   app-skills {
     grid-column: 3;
-    grid-row: 3 / span 3;
+    grid-row: 3 / span 4;
   }
 
   app-saving-throws {
     grid-column: 1 / span 2;
+  }
+
+  app-base-combat {
+    grid-column: span 2;
   }
 }

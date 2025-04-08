@@ -1,0 +1,15 @@
+form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+
+  div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    &.span-2 {
+        grid-column: span 2;
+    }
+  }
+}

@@ -8,7 +8,7 @@ import { Component, input, InputSignal, signal } from '@angular/core';
 })
 export class TitleComponent {
 
-  fullTitle: InputSignal<string> = input.required<string>();
+  fullTitle: InputSignal<string | undefined> = input<string>();
   shortTitle: InputSignal<string> = input.required<string>();
 
 }

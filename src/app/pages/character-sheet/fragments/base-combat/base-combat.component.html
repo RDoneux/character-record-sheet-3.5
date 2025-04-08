@@ -1,0 +1,43 @@
+<form [formGroup]="baseCombatForm">
+  <div>
+    <app-title [shortTitle]="'Base Attack Bonus' | uppercase" />
+    <mat-form-field class="no-bottom-margin">
+      <input matInput formControlName="baseAttackBonus" />
+    </mat-form-field>
+  </div>
+
+  <div>
+    <app-title [shortTitle]="'Spell Resistance' | uppercase" />
+    <mat-form-field class="no-bottom-margin">
+      <input matInput formControlName="spellResistance" />
+    </mat-form-field>
+  </div>
+
+  <div class="span-2" formGroupName="grapple">
+    <app-title [shortTitle]="'Grapple' | uppercase" fullTitle="Modifier" />
+    <mat-form-field class="no-bottom-margin">
+      <mat-label>Total</mat-label>
+      <input matInput formControlName="total" />
+    </mat-form-field>
+    <small>=</small>
+    <mat-form-field class="no-bottom-margin">
+      <mat-label>Base Attack Bonus</mat-label>
+      <input matInput formControlName="baseAttackBonus" />
+    </mat-form-field>
+    <small>+</small>
+    <mat-form-field class="no-bottom-margin">
+      <mat-label>Strength Modifier</mat-label>
+      <input matInput formControlName="strengthModifier" />
+    </mat-form-field>
+    <small>+</small>
+    <mat-form-field class="no-bottom-margin">
+      <mat-label>Size Modifier</mat-label>
+      <input matInput formControlName="sizeModifier" />
+    </mat-form-field>
+    <small>+</small>
+    <mat-form-field class="no-bottom-margin">
+      <mat-label>Misc Modifier</mat-label>
+      <input matInput formControlName="miscModifier" />
+    </mat-form-field>
+  </div>
+</form>
