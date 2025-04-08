@@ -1,0 +1,50 @@
+form {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 8px;
+
+  .weapon-name {
+    grid-column: 1 / span 3;
+  }
+
+  .notes {
+    grid-column: span 4;
+  }
+
+  .ammunition {
+    grid-column: span 6;
+    display: flex;
+    gap: 8px;
+  }
+
+  mat-checkbox:nth-child(5n) {
+    margin-right: 11px;
+  }
+}
+
+::ng-deep .custom-checkbox > div > div.mdc-checkbox {
+  padding: 0px !important;
+}
+
+::ng-deep
+  .custom-checkbox
+  > div
+  > div.mdc-checkbox
+  > .mat-mdc-checkbox-touch-target,
+::ng-deep
+  .custom-checkbox
+  > div
+  > div.mdc-checkbox
+  > .mdc-checkbox__native-control {
+  height: 18px !important;
+  width: 18px !important;
+}
+
+::ng-deep
+  .custom-checkbox
+  > div
+  > div.mdc-checkbox
+  > .mdc-checkbox__background {
+  top: 0px !important;
+  left: 0px !important;
+}

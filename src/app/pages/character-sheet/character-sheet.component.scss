@@ -2,10 +2,10 @@
   padding: 20px;
 
   display: grid;
-  grid-template-columns: minmax(350px, 450px) minmax(450px, 0.8fr) 1fr;
-  grid-template-rows: auto auto auto auto auto 1fr;
+  grid-template-columns: minmax(300px, 0.3fr) minmax(400px, 0.3fr) 1fr;
+  grid-template-rows: auto auto auto auto auto auto 1fr;
   gap: 20px;
-  align-items: center;;
+  align-items: center;
 
   app-base-info {
     grid-column: 1 / span 3;
@@ -26,7 +26,7 @@
 
   app-skills {
     grid-column: 3;
-    grid-row: 3 / span 4;
+    grid-row: 3 / span 5;
   }
 
   app-saving-throws {
@@ -35,5 +35,9 @@
 
   app-base-combat {
     grid-column: span 2;
+  }
+
+  app-attacks {
+    grid-column: 1 / span 2;
   }
 }
