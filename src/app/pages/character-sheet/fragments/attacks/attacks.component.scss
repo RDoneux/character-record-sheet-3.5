@@ -3,6 +3,12 @@ form {
   grid-template-columns: repeat(6, 1fr);
   gap: 8px;
 
+  h3 {
+    width: 100%;
+    grid-column: span 6;
+    text-align: center;
+  }
+
   .weapon-name {
     grid-column: 1 / span 3;
   }

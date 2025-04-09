@@ -7,6 +7,7 @@ import { SkillsComponent } from './fragments/skills/skills.component';
 import { SavingThrowsComponent } from './fragments/saving-throws/saving-throws.component';
 import { BaseCombatComponent } from "./fragments/base-combat/base-combat.component";
 import { AttacksComponent } from "./fragments/attacks/attacks.component";
+import { GearComponent } from "./fragments/gear/gear.component";
 
 @Component({
   selector: 'app-character-sheet',
@@ -18,7 +19,8 @@ import { AttacksComponent } from "./fragments/attacks/attacks.component";
     SkillsComponent,
     SavingThrowsComponent,
     BaseCombatComponent,
-    AttacksComponent
+    AttacksComponent,
+    GearComponent
 ],
   templateUrl: './character-sheet.component.html',
   styleUrl: './character-sheet.component.scss',
