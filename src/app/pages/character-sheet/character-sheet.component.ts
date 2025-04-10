@@ -8,6 +8,7 @@ import { SavingThrowsComponent } from './fragments/saving-throws/saving-throws.c
 import { BaseCombatComponent } from "./fragments/base-combat/base-combat.component";
 import { AttacksComponent } from "./fragments/attacks/attacks.component";
 import { GearComponent } from "./fragments/gear/gear.component";
+import { PossessionsComponent } from "./fragments/possessions/possessions.component";
 
 @Component({
   selector: 'app-character-sheet',
@@ -20,7 +21,8 @@ import { GearComponent } from "./fragments/gear/gear.component";
     SavingThrowsComponent,
     BaseCombatComponent,
     AttacksComponent,
-    GearComponent
+    GearComponent,
+    PossessionsComponent
 ],
   templateUrl: './character-sheet.component.html',
   styleUrl: './character-sheet.component.scss',

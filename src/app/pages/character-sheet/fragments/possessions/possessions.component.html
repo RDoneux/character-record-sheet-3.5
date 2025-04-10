@@ -1,0 +1,76 @@
+<form [formGroup]="possessionsForm">
+  <h3>Other Possessions</h3>
+  <div formGroupName="items">
+    @for(possession of possessions; track possession) {
+    <div class="possession-row" [formGroupName]="possession">
+      <mat-form-field class="no-bottom-margin">
+        <mat-label>Item</mat-label>
+        <input matInput formControlName="name" />
+      </mat-form-field>
+      <mat-form-field class="no-bottom-margin">
+        <mat-label>PG.</mat-label>
+        <input matInput formControlName="pg" />
+      </mat-form-field>
+      <mat-form-field class="no-bottom-margin">
+        <mat-label>WT.</mat-label>
+        <input matInput formControlName="weight" />
+      </mat-form-field>
+      <div class="icon-container">
+        @if(possessions.length > 0) {
+        <mat-icon (click)="removePossession(possession)">delete</mat-icon>
+        } @if($index == possessions.length - 1){
+        <mat-icon (click)="addPossession(possession)">add</mat-icon>
+        }
+      </div>
+    </div>
+    }
+  </div>
+  <div class="weights-container">
+    <mat-form-field class="no-bottom-margin">
+      <mat-label>Light Load</mat-label>
+      <input matInput formControlName="lightLoad" />
+    </mat-form-field>
+    <mat-form-field class="no-bottom-margin">
+      <mat-label>Medium Load</mat-label>
+      <input matInput formControlName="mediumLoad" />
+    </mat-form-field>
+    <mat-form-field class="no-bottom-margin">
+      <mat-label>Heavy Load</mat-label>
+      <input matInput formControlName="heavyLoad" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Lift Over Head</mat-label>
+      <input matInput formControlName="liftOverHead" />
+      <mat-hint>Equals Max Load</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Lift Off Ground</mat-label>
+      <input matInput formControlName="liftOffGround" />
+      <mat-hint>2x Max Load</mat-hint>
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Push or Drag</mat-label>
+      <input matInput formControlName="pushOrDrag" />
+      <mat-hint>5x Max Load</mat-hint>
+    </mat-form-field>
+  </div>
+  <h3>Money</h3>
+  <div class="money-container">
+    <mat-form-field>
+      <mat-label>Copper</mat-label>
+      <input matInput type="number" formControlName="copper" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Silver</mat-label>
+      <input matInput type="number" formControlName="silver" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Gold</mat-label>
+      <input matInput type="number" formControlName="gold" />
+    </mat-form-field>
+    <mat-form-field>
+      <mat-label>Platinum</mat-label>
+      <input matInput type="number" formControlName="platinum" />
+    </mat-form-field>
+  </div>
+</form>
