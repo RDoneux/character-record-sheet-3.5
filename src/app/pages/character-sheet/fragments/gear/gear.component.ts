@@ -43,8 +43,6 @@ export class GearComponent {
       persistedInfo ? persistedInfo : GEAR_DEFAULT
     );
 
-    console.log(this.gearForm);
-
     this.gearForm.valueChanges.pipe(debounceTime(1000)).subscribe(() => {
       this.localStorage.save<IGear>(
         GearComponent.STORAGE_KEY,

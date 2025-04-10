@@ -1,0 +1,49 @@
+<form [formGroup]="specialAbilitiesForm">
+  <div formGroupName="feats">
+    <h3>Feats</h3>
+    @for(feat of feats; track feat) {
+    <mat-form-field class="no-bottom-margin">
+      <input matInput [formControlName]="feat" />
+    </mat-form-field>
+    <div class="icon-container">
+      @if(feats.length > 0) {
+      <mat-icon (click)="remove('feats', feat)">delete</mat-icon>
+      } @if($index == feats.length - 1){
+      <mat-icon (click)="add('feats', feat)">add</mat-icon>
+      }
+    </div>
+    }
+  </div>
+  <div formGroupName="specialAbilities">
+    <h3>Special Abilities</h3>
+    @for(specialAbility of specialAbilities; track specialAbility) {
+    <mat-form-field class="no-bottom-margin">
+      <input matInput [formControlName]="specialAbility" />
+    </mat-form-field>
+    <div class="icon-container">
+      @if(specialAbilities.length > 0) {
+      <mat-icon (click)="remove('specialAbilities', specialAbility)"
+        >delete</mat-icon
+      >
+      } @if($index == specialAbilities.length - 1){
+      <mat-icon (click)="add('specialAbilities', specialAbility)">add</mat-icon>
+      }
+    </div>
+    }
+  </div>
+  <div formGroupName="languages">
+    <h3>Languages</h3>
+    @for(language of languages; track language) {
+    <mat-form-field class="no-bottom-margin">
+      <input matInput [formControlName]="language" />
+    </mat-form-field>
+    <div class="icon-container">
+      @if(languages.length > 0) {
+      <mat-icon (click)="remove('languages', language)">delete</mat-icon>
+      } @if($index == languages.length - 1){
+      <mat-icon (click)="add('languages', language)">add</mat-icon>
+      }
+    </div>
+    }
+  </div>
+</form>

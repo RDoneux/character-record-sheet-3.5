@@ -9,6 +9,7 @@ import { BaseCombatComponent } from "./fragments/base-combat/base-combat.compone
 import { AttacksComponent } from "./fragments/attacks/attacks.component";
 import { GearComponent } from "./fragments/gear/gear.component";
 import { PossessionsComponent } from "./fragments/possessions/possessions.component";
+import { SpecialAbilitiesComponent } from "./fragments/special-abilities/special-abilities.component";
 
 @Component({
   selector: 'app-character-sheet',
@@ -22,7 +23,8 @@ import { PossessionsComponent } from "./fragments/possessions/possessions.compon
     BaseCombatComponent,
     AttacksComponent,
     GearComponent,
-    PossessionsComponent
+    PossessionsComponent,
+    SpecialAbilitiesComponent
 ],
   templateUrl: './character-sheet.component.html',
   styleUrl: './character-sheet.component.scss',

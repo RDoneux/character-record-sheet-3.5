@@ -50,9 +50,7 @@ export class AttacksComponent {
     this.attackForm = this.formBuilder.buildForm(
       persistedInfo ? persistedInfo : ATTACK_DEFAULT
     );
-
-    console.log(this.attackForm);
-
+    
     this.attackForm.valueChanges.pipe(debounceTime(1000)).subscribe(() => {
       this.localStorage.save<IAttack>(
         AttacksComponent.STORAGE_KEY,
