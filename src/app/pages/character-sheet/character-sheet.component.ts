@@ -10,6 +10,7 @@ import { AttacksComponent } from "./fragments/attacks/attacks.component";
 import { GearComponent } from "./fragments/gear/gear.component";
 import { PossessionsComponent } from "./fragments/possessions/possessions.component";
 import { SpecialAbilitiesComponent } from "./fragments/special-abilities/special-abilities.component";
+import { SpellsComponent } from './fragments/spells/spells.component';
 
 @Component({
   selector: 'app-character-sheet',
@@ -24,7 +25,8 @@ import { SpecialAbilitiesComponent } from "./fragments/special-abilities/special
     AttacksComponent,
     GearComponent,
     PossessionsComponent,
-    SpecialAbilitiesComponent
+    SpecialAbilitiesComponent,
+    SpellsComponent
 ],
   templateUrl: './character-sheet.component.html',
   styleUrl: './character-sheet.component.scss',
