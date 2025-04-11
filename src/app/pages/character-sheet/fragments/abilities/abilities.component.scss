@@ -1,12 +1,15 @@
-table {
-  table-layout: fixed;
-  width: 100%;
-
-  th {
-    font-size: 12px;
-  }
-
-  mat-form-field {
+form {
+  max-width: 400px;
+  table {
+    table-layout: fixed;
     width: 100%;
+
+    th {
+      font-size: 12px;
+    }
+
+    mat-form-field {
+      width: 100%;
+    }
   }
 }
