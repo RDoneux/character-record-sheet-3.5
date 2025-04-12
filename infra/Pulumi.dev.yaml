@@ -1,0 +1,6 @@
+encryptionsalt: v1:lPjyZWjJq+Y=:v1:T/SX/EgB2fxeGbWK:qZDt/5db1zqfbqYjYUrYC9O5tXUOiQ==
+config:
+  azure:location: UKSouth
+  dd-infra:prefix: ddev
+  dd-infra:dnsZoneName: doneuxservices.com
+  dd-infra:subdomain: character-sheet-dev
