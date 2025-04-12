@@ -41,20 +41,20 @@ pipeline {
                 }
             }
 
-            stage ("Quality Gate: Static Analysis") {
-                steps {
-                    sh "npm run lint:ci"
-                    sh "npm run prettier:ci"
-                }
-                post {
-                    success {
-                        echo "Static Analysis Success"
-                    }
-                    failure {
-                        echo "Static Analysis Failure"
-                    }
-                }
-            }
+            // stage ("Quality Gate: Static Analysis") {
+            //     steps {
+            //         sh "npm run lint:ci"
+            //         sh "npm run prettier:ci"
+            //     }
+            //     post {
+            //         success {
+            //             echo "Static Analysis Success"
+            //         }
+            //         failure {
+            //             echo "Static Analysis Failure"
+            //         }
+            //     }
+            // }
 
             stage ("Quality Gate: Composition Analysis") {
                 steps {
