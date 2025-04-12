@@ -58,7 +58,7 @@ pipeline {
 
             stage ("Quality Gate: Composition Analysis") {
                 steps {
-                    sh "npm run test:ci"
+                    sh "npm run test"
                 }
                 post {
                     success {
