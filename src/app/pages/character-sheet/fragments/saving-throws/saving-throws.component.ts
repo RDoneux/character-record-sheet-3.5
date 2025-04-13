@@ -22,7 +22,7 @@ import { SavingThrowAbilityMapPipe } from './pipes/saving-throw-ability-map.pipe
     MatInputModule,
     TitleComponent,
     CommonModule,
-    SavingThrowAbilityMapPipe
+    SavingThrowAbilityMapPipe,
   ],
   templateUrl: './saving-throws.component.html',
   styleUrl: './saving-throws.component.scss',
@@ -32,7 +32,7 @@ export class SavingThrowsComponent {
 
   constructor(
     private localStorage: LocalStorageService,
-    private formBuilder: FormBuilderService
+    private formBuilder: FormBuilderService,
   ) {}
 
   savingThrowsForm!: FormGroup<SavingThrowsForm>;
@@ -42,7 +42,7 @@ export class SavingThrowsComponent {
       this.localStorage.load<ISavingThrows>(SavingThrowsComponent.STORAGE_KEY);
 
     this.savingThrowsForm = this.formBuilder.buildForm(
-      persistedInfo ? persistedInfo : SAVING_THROWS_DEFAULT
+      persistedInfo ? persistedInfo : SAVING_THROWS_DEFAULT,
     );
 
     this.savingThrowsForm.valueChanges
@@ -50,12 +50,12 @@ export class SavingThrowsComponent {
       .subscribe(() => {
         this.localStorage.save<ISavingThrows>(
           SavingThrowsComponent.STORAGE_KEY,
-          this.savingThrowsForm.getRawValue()
+          this.savingThrowsForm.getRawValue(),
         );
       });
   }
 
   get form(): string[] {
-    return Object.keys(this.savingThrowsForm.controls)
+    return Object.keys(this.savingThrowsForm.controls);
   }
 }

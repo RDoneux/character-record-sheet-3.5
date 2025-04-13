@@ -1,5 +1,5 @@
 name: dd-infra
-description: A minimal Azure Native TypeScript Pulumi program
+description: A minimal AWS TypeScript Pulumi program
 runtime:
   name: nodejs
   options:
@@ -7,4 +7,4 @@ runtime:
 config:
   pulumi:tags:
     value:
-      pulumi:template: azure-typescript
+      pulumi:template: aws-typescript

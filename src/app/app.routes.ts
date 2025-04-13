@@ -7,7 +7,7 @@ export const routes: Routes = [
     path: 'character-sheet',
     loadComponent: () =>
       import('./pages/character-sheet/character-sheet.component').then(
-        (m) => m.CharacterSheetComponent
+        (m) => m.CharacterSheetComponent,
       ),
   },
   {

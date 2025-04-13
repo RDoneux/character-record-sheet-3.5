@@ -27,10 +27,10 @@
   <mat-form-field class="one-third-width">
     <mat-label>Alignment</mat-label>
     <mat-select formControlName="alignment">
-      @for(alignment of alignments; track alignment) {
-      <mat-option [value]="alignment">
-        {{ alignment }}
-      </mat-option>
+      @for (alignment of alignments; track alignment) {
+        <mat-option [value]="alignment">
+          {{ alignment }}
+        </mat-option>
       }
     </mat-select>
   </mat-form-field>

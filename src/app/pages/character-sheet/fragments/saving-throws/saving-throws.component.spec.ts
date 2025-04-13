@@ -8,9 +8,8 @@ describe('SavingThrowsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [SavingThrowsComponent]
-    })
-    .compileComponents();
+      imports: [SavingThrowsComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(SavingThrowsComponent);
     component = fixture.componentInstance;

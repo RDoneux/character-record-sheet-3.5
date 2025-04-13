@@ -1,6 +1,7 @@
-encryptionsalt: v1:lPjyZWjJq+Y=:v1:T/SX/EgB2fxeGbWK:qZDt/5db1zqfbqYjYUrYC9O5tXUOiQ==
+encryptionsalt: v1:h5+Py6vRASA=:v1:TX+zZ7hYZ7xC7Tre:g6/6+lQmxqOXzAakjYUg7P/XmtGYjQ==
 config:
-  azure:location: UKSouth
-  dd-infra:prefix: ddev
-  dd-infra:dnsZoneName: doneuxservices.com
-  dd-infra:subdomain: character-sheet-dev
+  aws:region: eu-west-2
+  dd-infra:projectname: character-sheet
+  dd-infra:servicename: web-dev
+  dd-infra:hostedZone: doneuxservices.co.uk
+  dd-infra:subDomain: character-sheet-dev.doneuxservices.co.uk

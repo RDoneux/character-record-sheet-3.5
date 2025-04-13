@@ -29,7 +29,7 @@ export class PossessionsComponent {
 
   constructor(
     private localStorage: LocalStorageService,
-    private formBuilder: FormBuilderService
+    private formBuilder: FormBuilderService,
   ) {}
 
   possessionsForm!: FormGroup<IPossessionsForm>;
@@ -39,20 +39,20 @@ export class PossessionsComponent {
       this.localStorage.load<IPossessions>(PossessionsComponent.STORAGE_KEY);
 
     this.possessionsForm = this.formBuilder.buildForm(
-      persistedInfo ? persistedInfo : POSSESSIONS_DEFAULT
+      persistedInfo ? persistedInfo : POSSESSIONS_DEFAULT,
     );
 
     this.possessionsForm.valueChanges.pipe(debounceTime(1000)).subscribe(() => {
       this.localStorage.save<IPossessions>(
         PossessionsComponent.STORAGE_KEY,
-        this.possessionsForm.getRawValue()
+        this.possessionsForm.getRawValue(),
       );
     });
   }
 
   get possessions() {
     return Object.keys(
-      (this.possessionsForm.get('items') as FormGroup).controls
+      (this.possessionsForm.get('items') as FormGroup).controls,
     );
   }
 
@@ -64,7 +64,7 @@ export class PossessionsComponent {
   addPossession(index: string) {
     (this.possessionsForm.get('items') as FormGroup).addControl(
       `${+index + 1}`,
-      this.formBuilder.buildForm(POSSESSION_DEFAULT)
+      this.formBuilder.buildForm(POSSESSION_DEFAULT),
     );
   }
 }

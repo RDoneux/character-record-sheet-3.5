@@ -14,7 +14,12 @@ import { TitleComponent } from '../../components/title/title.component';
 
 @Component({
   selector: 'app-initiative',
-  imports: [ReactiveFormsModule, MatFormFieldModule, MatInputModule, TitleComponent],
+  imports: [
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
+    TitleComponent,
+  ],
   templateUrl: './initiative.component.html',
   styleUrl: './initiative.component.scss',
 })
@@ -23,24 +28,24 @@ export class InitiativeComponent {
 
   constructor(
     private localStorage: LocalStorageService,
-    private formBuilder: FormBuilderService
+    private formBuilder: FormBuilderService,
   ) {}
 
   initiativeForm!: FormGroup<IInitiativeForm>;
 
   ngOnInit() {
     const persistedInfo = this.localStorage.load<IInitiativeForm>(
-      InitiativeComponent.STORAGE_KEY
+      InitiativeComponent.STORAGE_KEY,
     );
 
     this.initiativeForm = this.formBuilder.buildForm(
-      persistedInfo ? persistedInfo : INITIATIVE_DEFAULT
+      persistedInfo ? persistedInfo : INITIATIVE_DEFAULT,
     );
 
     this.initiativeForm.valueChanges.pipe(debounceTime(1000)).subscribe(() => {
       this.localStorage.save<IInitiative>(
         InitiativeComponent.STORAGE_KEY,
-        this.initiativeForm.getRawValue()
+        this.initiativeForm.getRawValue(),
       );
     });
   }

@@ -30,7 +30,7 @@ export class BaseCombatComponent {
 
   constructor(
     private localStorage: LocalStorageService,
-    private formBuilder: FormBuilderService
+    private formBuilder: FormBuilderService,
   ) {}
 
   baseCombatForm!: FormGroup<IBaseCombatForm>;
@@ -40,13 +40,13 @@ export class BaseCombatComponent {
       this.localStorage.load<IBaseCombat>(BaseCombatComponent.STORAGE_KEY);
 
     this.baseCombatForm = this.formBuilder.buildForm(
-      persistedInfo ? persistedInfo : BASE_COMBAT_DEFAULT
+      persistedInfo ? persistedInfo : BASE_COMBAT_DEFAULT,
     );
 
     this.baseCombatForm.valueChanges.pipe(debounceTime(1000)).subscribe(() => {
       this.localStorage.save<IBaseCombat>(
         BaseCombatComponent.STORAGE_KEY,
-        this.baseCombatForm.getRawValue()
+        this.baseCombatForm.getRawValue(),
       );
     });
   }

@@ -37,24 +37,24 @@ export class AttacksComponent {
 
   constructor(
     private localStorage: LocalStorageService,
-    private formBuilder: FormBuilderService
+    private formBuilder: FormBuilderService,
   ) {}
 
   attackForm!: FormGroup<IAttackForm>;
 
   ngOnInit() {
     const persistedInfo: IAttack | null = this.localStorage.load<IAttack>(
-      AttacksComponent.STORAGE_KEY
+      AttacksComponent.STORAGE_KEY,
     );
 
     this.attackForm = this.formBuilder.buildForm(
-      persistedInfo ? persistedInfo : ATTACK_DEFAULT
+      persistedInfo ? persistedInfo : ATTACK_DEFAULT,
     );
-    
+
     this.attackForm.valueChanges.pipe(debounceTime(1000)).subscribe(() => {
       this.localStorage.save<IAttack>(
         AttacksComponent.STORAGE_KEY,
-        this.attackForm.getRawValue()
+        this.attackForm.getRawValue(),
       );
     });
   }
@@ -67,7 +67,7 @@ export class AttacksComponent {
       },
       {
         injector: this._injector,
-      }
+      },
     );
   }
 
@@ -85,7 +85,7 @@ export class AttacksComponent {
         (this.attackForm.get(key) as FormGroup).controls[
           'ammunition'
         ] as FormGroup
-      ).controls
+      ).controls,
     );
   }
 
@@ -96,7 +96,7 @@ export class AttacksComponent {
   addWeapon(index: string) {
     (this.attackForm as any).addControl(
       `${+index + 1}`,
-      this.formBuilder.buildForm(ATTACK_DEFAULT[0])
+      this.formBuilder.buildForm(ATTACK_DEFAULT[0]),
     );
   }
 }

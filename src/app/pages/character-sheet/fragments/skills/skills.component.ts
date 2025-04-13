@@ -37,7 +37,7 @@ export class SkillsComponent {
   constructor(
     private localStorage: LocalStorageService,
     private formBuilder: FormBuilderService,
-    private utils: UtilsService
+    private utils: UtilsService,
   ) {}
 
   skillsForm!: FormGroup<ISkillsForm>;
@@ -46,24 +46,24 @@ export class SkillsComponent {
 
   ngOnInit() {
     const persistedSkills = this.localStorage.load<ISkillsForm>(
-      SkillsComponent.STORAGE_KEY
+      SkillsComponent.STORAGE_KEY,
     );
 
     this.skillsForm = this.formBuilder.buildForm(
-      persistedSkills ? persistedSkills : SKILLS_DEFAULT
+      persistedSkills ? persistedSkills : SKILLS_DEFAULT,
     );
 
     this.skillsForm.valueChanges.subscribe(() => {
       this.localStorage.save<ISkills>(
         SkillsComponent.STORAGE_KEY,
-        this.skillsForm.getRawValue()
+        this.skillsForm.getRawValue(),
       );
     });
   }
 
   getSkillAbility(key: string): string {
     return this.utils.abilityAbbreviation(
-      SkillAbilityMap[key as keyof ISkills]
+      SkillAbilityMap[key as keyof ISkills],
     );
   }
 
@@ -78,7 +78,7 @@ export class SkillsComponent {
   addSkill(skill: string, index: string) {
     (this.skillsForm.get(skill) as FormGroup).addControl(
       `${+index + 1}`,
-      this.formBuilder.buildForm(SKILL_DEFAULT)
+      this.formBuilder.buildForm(SKILL_DEFAULT),
     );
   }
 

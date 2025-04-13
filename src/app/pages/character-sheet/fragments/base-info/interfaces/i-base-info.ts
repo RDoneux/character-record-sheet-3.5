@@ -1,4 +1,4 @@
-import { FormGroupType } from "../../../../../types/form-group-type";
+import { FormGroupType } from '../../../../../types/form-group-type';
 
 export interface IBaseInfo {
   characterName: string | null;

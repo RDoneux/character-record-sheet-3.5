@@ -41,13 +41,13 @@ export class AbilitiesComponent {
       this.localStorage.load<IAbilities>(AbilitiesComponent.STORAGE_KEY);
 
     this.abilitiesForm = this.formBuilder.buildForm(
-      persistedAbilities ? persistedAbilities : ABILITIES_DEFAULT
+      persistedAbilities ? persistedAbilities : ABILITIES_DEFAULT,
     );
 
     this.abilitiesForm.valueChanges.pipe(debounceTime(1000)).subscribe(() => {
       this.localStorage.save<IAbilities>(
         AbilitiesComponent.STORAGE_KEY,
-        this.abilitiesForm.getRawValue()
+        this.abilitiesForm.getRawValue(),
       );
     });
   }

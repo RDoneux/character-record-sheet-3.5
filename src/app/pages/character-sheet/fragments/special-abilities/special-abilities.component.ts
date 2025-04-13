@@ -29,7 +29,7 @@ export class SpecialAbilitiesComponent {
 
   constructor(
     private localStorage: LocalStorageService,
-    private formBuilder: FormBuilderService
+    private formBuilder: FormBuilderService,
   ) {}
 
   specialAbilitiesForm!: FormGroup<ISpecialAbilitiesForm>;
@@ -37,11 +37,11 @@ export class SpecialAbilitiesComponent {
   ngOnInit() {
     const persistedInfo: ISpecialAbilities | null =
       this.localStorage.load<ISpecialAbilities>(
-        SpecialAbilitiesComponent.STORAGE_KEY
+        SpecialAbilitiesComponent.STORAGE_KEY,
       );
 
     this.specialAbilitiesForm = this.formBuilder.buildForm(
-      persistedInfo ? persistedInfo : SPECIAL_ABILITIES_DEFAULT
+      persistedInfo ? persistedInfo : SPECIAL_ABILITIES_DEFAULT,
     );
 
     this.specialAbilitiesForm.valueChanges
@@ -49,26 +49,26 @@ export class SpecialAbilitiesComponent {
       .subscribe(() => {
         this.localStorage.save<ISpecialAbilities>(
           SpecialAbilitiesComponent.STORAGE_KEY,
-          this.specialAbilitiesForm.getRawValue()
+          this.specialAbilitiesForm.getRawValue(),
         );
       });
   }
 
   get feats() {
     return Object.keys(
-      (this.specialAbilitiesForm.get('feats') as FormGroup).controls
+      (this.specialAbilitiesForm.get('feats') as FormGroup).controls,
     );
   }
 
   get specialAbilities() {
     return Object.keys(
-      (this.specialAbilitiesForm.get('specialAbilities') as FormGroup).controls
+      (this.specialAbilitiesForm.get('specialAbilities') as FormGroup).controls,
     );
   }
 
   get languages() {
     return Object.keys(
-      (this.specialAbilitiesForm.get('languages') as FormGroup).controls
+      (this.specialAbilitiesForm.get('languages') as FormGroup).controls,
     );
   }
 
@@ -79,7 +79,7 @@ export class SpecialAbilitiesComponent {
   add(type: string, index: string) {
     (this.specialAbilitiesForm.get(type) as any).addControl(
       `${+index + 1}`,
-      new FormControl('')
+      new FormControl(''),
     );
   }
 }

@@ -8,73 +8,81 @@
     <p>Ability Modifier</p>
     <p>Ranks</p>
     <p>Misc Modifier</p>
-    @for(skill of skills; track skill) {
-    @if(skillsForm.get(skill)?.get('isClassSkill')) {
-    <ng-container [formGroupName]="skill">
-      <p><mat-checkbox formControlName="isClassSkill" /></p>
-      <p class="skill">{{ convertCamelCaseToNormalText(skill) }}</p>
-      <p>{{ getSkillAbility(skill) }}</p>
-      <p>
-        <mat-form-field class="no-bottom-margin">
-          <input matInput formControlName="skillModifier" />
-        </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field class="no-bottom-margin">
-          <input matInput formControlName="abilityModifier" />
-        </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field class="no-bottom-margin">
-          <input matInput formControlName="ranks" />
-        </mat-form-field>
-      </p>
-      <p>
-        <mat-form-field class="no-bottom-margin">
-          <input matInput formControlName="miscModifier" />
-        </mat-form-field>
-      </p>
-    </ng-container>
-    } @else { @for(nestedSkill of getFormGroup(skill); track nestedSkill) {
-    <ng-container [formGroupName]="skill">
-      <ng-container [formGroupName]="nestedSkill">
-        <p><mat-checkbox formControlName="isClassSkill" /></p>
-        <span class="skill specialisation">
-          <p>{{ convertCamelCaseToNormalText(skill) }}</p>
-          <mat-form-field class="no-bottom-margin min-nowrap-width">
-            <input matInput formControlName="specialisation" />
-            <span matSuffix>
-              @if($index === getFormGroup(skill).length -1) {
-              <mat-icon (click)="addSkill(skill, nestedSkill)">add</mat-icon>
-              } @if(getFormGroup(skill).length > 1) {
-              <mat-icon (click)="deleteSkill(skill, nestedSkill)">delete</mat-icon>
-              }
-            </span>
-          </mat-form-field>
-        </span>
-        <p>{{ getSkillAbility(skill) }}</p>
-        <p>
-          <mat-form-field class="no-bottom-margin">
-            <input matInput formControlName="skillModifier" />
-          </mat-form-field>
-        </p>
-        <p>
-          <mat-form-field class="no-bottom-margin">
-            <input matInput formControlName="abilityModifier" />
-          </mat-form-field>
-        </p>
-        <p>
-          <mat-form-field class="no-bottom-margin">
-            <input matInput formControlName="ranks" />
-          </mat-form-field>
-        </p>
-        <p>
-          <mat-form-field class="no-bottom-margin">
-            <input matInput formControlName="miscModifier" />
-          </mat-form-field>
-        </p>
-      </ng-container>
-    </ng-container>
-    } } }
+    @for (skill of skills; track skill) {
+      @if (skillsForm.get(skill)?.get("isClassSkill")) {
+        <ng-container [formGroupName]="skill">
+          <p><mat-checkbox formControlName="isClassSkill" /></p>
+          <p class="skill">{{ convertCamelCaseToNormalText(skill) }}</p>
+          <p>{{ getSkillAbility(skill) }}</p>
+          <p>
+            <mat-form-field class="no-bottom-margin">
+              <input matInput formControlName="skillModifier" />
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field class="no-bottom-margin">
+              <input matInput formControlName="abilityModifier" />
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field class="no-bottom-margin">
+              <input matInput formControlName="ranks" />
+            </mat-form-field>
+          </p>
+          <p>
+            <mat-form-field class="no-bottom-margin">
+              <input matInput formControlName="miscModifier" />
+            </mat-form-field>
+          </p>
+        </ng-container>
+      } @else {
+        @for (nestedSkill of getFormGroup(skill); track nestedSkill) {
+          <ng-container [formGroupName]="skill">
+            <ng-container [formGroupName]="nestedSkill">
+              <p><mat-checkbox formControlName="isClassSkill" /></p>
+              <span class="skill specialisation">
+                <p>{{ convertCamelCaseToNormalText(skill) }}</p>
+                <mat-form-field class="no-bottom-margin min-nowrap-width">
+                  <input matInput formControlName="specialisation" />
+                  <span matSuffix>
+                    @if ($index === getFormGroup(skill).length - 1) {
+                      <mat-icon (click)="addSkill(skill, nestedSkill)"
+                        >add</mat-icon
+                      >
+                    }
+                    @if (getFormGroup(skill).length > 1) {
+                      <mat-icon (click)="deleteSkill(skill, nestedSkill)"
+                        >delete</mat-icon
+                      >
+                    }
+                  </span>
+                </mat-form-field>
+              </span>
+              <p>{{ getSkillAbility(skill) }}</p>
+              <p>
+                <mat-form-field class="no-bottom-margin">
+                  <input matInput formControlName="skillModifier" />
+                </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field class="no-bottom-margin">
+                  <input matInput formControlName="abilityModifier" />
+                </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field class="no-bottom-margin">
+                  <input matInput formControlName="ranks" />
+                </mat-form-field>
+              </p>
+              <p>
+                <mat-form-field class="no-bottom-margin">
+                  <input matInput formControlName="miscModifier" />
+                </mat-form-field>
+              </p>
+            </ng-container>
+          </ng-container>
+        }
+      }
+    }
   </div>
 </form>

@@ -1,23 +1,25 @@
 <form [formGroup]="spellsForm">
   <h3>Spells</h3>
-  @for(level of spellControls; track level) {
-  <div [formGroupName]="level">
-    @if (level == '0') {
-    <h4>Cantrips</h4>
-    } @else {
-    <h4>Level {{ level }} Spells</h4>
-    } @for(spell of getSpells(level); track spell) {
-    <mat-form-field class="no-bottom-margin">
-      <input matInput [formControlName]="spell" />
-    </mat-form-field>
-    <div class="icon-container">
-      @if(getSpells(level).length > 0) {
-      <mat-icon (click)="removeSpell(level, spell)">delete</mat-icon>
-      } @if($index == getSpells(level).length - 1){
-      <mat-icon (click)="addSpell(level, spell)">add</mat-icon>
+  @for (level of spellControls; track level) {
+    <div [formGroupName]="level">
+      @if (level == "0") {
+        <h4>Cantrips</h4>
+      } @else {
+        <h4>Level {{ level }} Spells</h4>
+      }
+      @for (spell of getSpells(level); track spell) {
+        <mat-form-field class="no-bottom-margin">
+          <input matInput [formControlName]="spell" />
+        </mat-form-field>
+        <div class="icon-container">
+          @if (getSpells(level).length > 0) {
+            <mat-icon (click)="removeSpell(level, spell)">delete</mat-icon>
+          }
+          @if ($index == getSpells(level).length - 1) {
+            <mat-icon (click)="addSpell(level, spell)">add</mat-icon>
+          }
+        </div>
       }
     </div>
-    }
-</div>
-}
+  }
 </form>

@@ -27,24 +27,24 @@ export class HitPointsComponent {
 
   constructor(
     private localStorage: LocalStorageService,
-    private formBuilder: FormBuilderService
+    private formBuilder: FormBuilderService,
   ) {}
 
   hitPointsForm!: FormGroup<IHitPointsForm>;
 
   ngOnInit() {
     const persistedInfo: IHitPoints | null = this.localStorage.load<IHitPoints>(
-      HitPointsComponent.STORAGE_KEY
+      HitPointsComponent.STORAGE_KEY,
     );
 
     this.hitPointsForm = this.formBuilder.buildForm(
-      persistedInfo ? persistedInfo : HIT_POINTS_DEFAULT
+      persistedInfo ? persistedInfo : HIT_POINTS_DEFAULT,
     );
 
     this.hitPointsForm.valueChanges.subscribe(() => {
       this.localStorage.save<IHitPoints>(
         HitPointsComponent.STORAGE_KEY,
-        this.hitPointsForm.getRawValue()
+        this.hitPointsForm.getRawValue(),
       );
     });
   }

@@ -29,7 +29,7 @@ export class BaseInfoComponent {
 
   constructor(
     private localStorage: LocalStorageService,
-    private formBuilder: FormBuilderService
+    private formBuilder: FormBuilderService,
   ) {}
 
   baseInfoForm!: FormGroup<IBaseInfoForm>;
@@ -37,17 +37,17 @@ export class BaseInfoComponent {
 
   ngOnInit() {
     const persistedInfo: IBaseInfo | null = this.localStorage.load<IBaseInfo>(
-      BaseInfoComponent.STORAGE_KEY
+      BaseInfoComponent.STORAGE_KEY,
     );
 
     this.baseInfoForm = this.formBuilder.buildForm(
-      persistedInfo ? persistedInfo : BASE_INFO_DEFAULT
+      persistedInfo ? persistedInfo : BASE_INFO_DEFAULT,
     );
 
     this.baseInfoForm.valueChanges.pipe(debounceTime(1000)).subscribe(() => {
       this.localStorage.save<IBaseInfo>(
         BaseInfoComponent.STORAGE_KEY,
-        this.baseInfoForm.getRawValue()
+        this.baseInfoForm.getRawValue(),
       );
     });
   }

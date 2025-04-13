@@ -16,7 +16,7 @@ import { MatCheckboxModule } from '@angular/material/checkbox';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
-    MatCheckboxModule
+    MatCheckboxModule,
   ],
   templateUrl: './spells.component.html',
   styleUrl: './spells.component.scss',
@@ -26,24 +26,24 @@ export class SpellsComponent {
 
   constructor(
     private localStorage: LocalStorageService,
-    private formBuilder: FormBuilderService
+    private formBuilder: FormBuilderService,
   ) {}
 
   spellsForm!: FormGroup<ISpellsForm>;
 
   ngOnInit() {
     const persistedSpells: ISpells | null = this.localStorage.load<ISpells>(
-      SpellsComponent.STORAGE_KEY
+      SpellsComponent.STORAGE_KEY,
     );
 
     this.spellsForm = this.formBuilder.buildForm(
-      persistedSpells ? persistedSpells : SPELLS_DEFAULT
+      persistedSpells ? persistedSpells : SPELLS_DEFAULT,
     );
 
     this.spellsForm.valueChanges.pipe(debounceTime(1000)).subscribe(() => {
       this.localStorage.save<ISpells>(
         SpellsComponent.STORAGE_KEY,
-        this.spellsForm.getRawValue()
+        this.spellsForm.getRawValue(),
       );
     });
   }

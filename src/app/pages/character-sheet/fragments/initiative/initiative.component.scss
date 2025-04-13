@@ -2,11 +2,11 @@ form {
   display: grid;
   grid-template-columns: 95px 1fr auto 1fr auto 1fr;
   gap: 10px;
-    align-items: center;
+  align-items: center;
 
-    app-title {
-        min-width: 95px;
-    }
+  app-title {
+    min-width: 95px;
+  }
 
   .span-2 {
     grid-column: span 3;

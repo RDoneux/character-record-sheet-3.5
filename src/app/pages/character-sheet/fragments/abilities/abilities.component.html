@@ -11,35 +11,39 @@
     </thead>
 
     <tbody>
-      @for(ability of abilities; track ability) {
-      <tr [formGroupName]="ability">
-        <td>
-          <app-title
-            [fullTitle]="ability"
-            [shortTitle]="getAbilityAbbreviation(ability)"
-          />
-        </td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input type="number" matInput formControlName="score" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input type="number" matInput formControlName="modifier" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input type="number" matInput formControlName="temporaryScore" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input type="number" matInput formControlName="temporaryModifier" />
-          </mat-form-field>
-        </td>
-      </tr>
+      @for (ability of abilities; track ability) {
+        <tr [formGroupName]="ability">
+          <td>
+            <app-title
+              [fullTitle]="ability"
+              [shortTitle]="getAbilityAbbreviation(ability)"
+            />
+          </td>
+          <td>
+            <mat-form-field class="no-bottom-margin">
+              <input type="number" matInput formControlName="score" />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="no-bottom-margin">
+              <input type="number" matInput formControlName="modifier" />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="no-bottom-margin">
+              <input type="number" matInput formControlName="temporaryScore" />
+            </mat-form-field>
+          </td>
+          <td>
+            <mat-form-field class="no-bottom-margin">
+              <input
+                type="number"
+                matInput
+                formControlName="temporaryModifier"
+              />
+            </mat-form-field>
+          </td>
+        </tr>
       }
     </tbody>
   </table>

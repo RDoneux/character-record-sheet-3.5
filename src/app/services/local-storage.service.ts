@@ -1,11 +1,10 @@
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LocalStorageService {
-
-  readonly PREFIX: string = '3_5CS:'
+  readonly PREFIX: string = '3_5CS:';
 
   save<T>(key: string, value: T): void {
     localStorage.setItem(this.PREFIX + key, JSON.stringify(value));

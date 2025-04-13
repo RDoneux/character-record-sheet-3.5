@@ -8,9 +8,8 @@ describe('HitPointsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [HitPointsComponent]
-    })
-    .compileComponents();
+      imports: [HitPointsComponent],
+    }).compileComponents();
 
     fixture = TestBed.createComponent(HitPointsComponent);
     component = fixture.componentInstance;

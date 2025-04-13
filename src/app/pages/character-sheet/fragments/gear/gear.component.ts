@@ -29,24 +29,24 @@ export class GearComponent {
 
   constructor(
     private localStorage: LocalStorageService,
-    private formBuilder: FormBuilderService
+    private formBuilder: FormBuilderService,
   ) {}
 
   gearForm!: FormGroup<IGearForm>;
 
   ngOnInit() {
     const persistedInfo: IGear | null = this.localStorage.load<IGear>(
-      GearComponent.STORAGE_KEY
+      GearComponent.STORAGE_KEY,
     );
 
     this.gearForm = this.formBuilder.buildForm(
-      persistedInfo ? persistedInfo : GEAR_DEFAULT
+      persistedInfo ? persistedInfo : GEAR_DEFAULT,
     );
 
     this.gearForm.valueChanges.pipe(debounceTime(1000)).subscribe(() => {
       this.localStorage.save<IGear>(
         GearComponent.STORAGE_KEY,
-        this.gearForm.getRawValue()
+        this.gearForm.getRawValue(),
       );
     });
   }
@@ -62,7 +62,7 @@ export class GearComponent {
   addProtectiveItem(index: string) {
     (this.gearForm.controls.protectiveItems as any).addControl(
       `${+index + 1}`,
-      this.formBuilder.buildForm(PROTECTIVE_ITEM_DEFAULT)
+      this.formBuilder.buildForm(PROTECTIVE_ITEM_DEFAULT),
     );
   }
 }

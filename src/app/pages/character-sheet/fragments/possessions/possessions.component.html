@@ -1,28 +1,29 @@
 <form [formGroup]="possessionsForm">
   <h3>Other Possessions</h3>
   <div formGroupName="items">
-    @for(possession of possessions; track possession) {
-    <div class="possession-row" [formGroupName]="possession">
-      <mat-form-field class="no-bottom-margin">
-        <mat-label>Item</mat-label>
-        <input matInput formControlName="name" />
-      </mat-form-field>
-      <mat-form-field class="no-bottom-margin">
-        <mat-label>PG.</mat-label>
-        <input matInput formControlName="pg" />
-      </mat-form-field>
-      <mat-form-field class="no-bottom-margin">
-        <mat-label>WT.</mat-label>
-        <input matInput formControlName="weight" />
-      </mat-form-field>
-      <div class="icon-container">
-        @if(possessions.length > 0) {
-        <mat-icon (click)="removePossession(possession)">delete</mat-icon>
-        } @if($index == possessions.length - 1){
-        <mat-icon (click)="addPossession(possession)">add</mat-icon>
-        }
+    @for (possession of possessions; track possession) {
+      <div class="possession-row" [formGroupName]="possession">
+        <mat-form-field class="no-bottom-margin">
+          <mat-label>Item</mat-label>
+          <input matInput formControlName="name" />
+        </mat-form-field>
+        <mat-form-field class="no-bottom-margin">
+          <mat-label>PG.</mat-label>
+          <input matInput formControlName="pg" />
+        </mat-form-field>
+        <mat-form-field class="no-bottom-margin">
+          <mat-label>WT.</mat-label>
+          <input matInput formControlName="weight" />
+        </mat-form-field>
+        <div class="icon-container">
+          @if (possessions.length > 0) {
+            <mat-icon (click)="removePossession(possession)">delete</mat-icon>
+          }
+          @if ($index == possessions.length - 1) {
+            <mat-icon (click)="addPossession(possession)">add</mat-icon>
+          }
+        </div>
       </div>
-    </div>
     }
   </div>
   <div class="weights-container">

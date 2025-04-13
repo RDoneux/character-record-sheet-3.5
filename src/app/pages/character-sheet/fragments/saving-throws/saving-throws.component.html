@@ -17,51 +17,50 @@
       </tr>
     </thead>
     <tbody>
-      @for(item of form; track item) {
-
-      <tr [formGroupName]="item">
-        <td>
-          <app-title
-            [shortTitle]="item | uppercase"
-            [fullTitle]="item | savingThrowAbilityMap"
-          />
-        </td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input matInput formControlName="total" />
-          </mat-form-field>
-        </td>
-        <td>=</td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input matInput formControlName="baseSave" />
-          </mat-form-field>
-        </td>
-        <td>+</td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input matInput formControlName="abilityModifier" />
-          </mat-form-field>
-        </td>
-        <td>+</td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input matInput formControlName="magicModifier" />
-          </mat-form-field>
-        </td>
-        <td>+</td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input matInput formControlName="miscModifier" />
-          </mat-form-field>
-        </td>
-        <td>+</td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input matInput formControlName="temporaryModifier" />
-          </mat-form-field>
-        </td>
-      </tr>
+      @for (item of form; track item) {
+        <tr [formGroupName]="item">
+          <td>
+            <app-title
+              [shortTitle]="item | uppercase"
+              [fullTitle]="item | savingThrowAbilityMap"
+            />
+          </td>
+          <td>
+            <mat-form-field class="no-bottom-margin">
+              <input matInput formControlName="total" />
+            </mat-form-field>
+          </td>
+          <td>=</td>
+          <td>
+            <mat-form-field class="no-bottom-margin">
+              <input matInput formControlName="baseSave" />
+            </mat-form-field>
+          </td>
+          <td>+</td>
+          <td>
+            <mat-form-field class="no-bottom-margin">
+              <input matInput formControlName="abilityModifier" />
+            </mat-form-field>
+          </td>
+          <td>+</td>
+          <td>
+            <mat-form-field class="no-bottom-margin">
+              <input matInput formControlName="magicModifier" />
+            </mat-form-field>
+          </td>
+          <td>+</td>
+          <td>
+            <mat-form-field class="no-bottom-margin">
+              <input matInput formControlName="miscModifier" />
+            </mat-form-field>
+          </td>
+          <td>+</td>
+          <td>
+            <mat-form-field class="no-bottom-margin">
+              <input matInput formControlName="temporaryModifier" />
+            </mat-form-field>
+          </td>
+        </tr>
       }
     </tbody>
   </table>

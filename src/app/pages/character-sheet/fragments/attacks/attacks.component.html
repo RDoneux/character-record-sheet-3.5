@@ -1,57 +1,58 @@
 <form [formGroup]="attackForm">
   <h3>Weapons</h3>
-  @for(key of formKeys; let i = $index; track key) {
-  <ng-container [formGroupName]="key">
-    <mat-form-field class="weapon-name no-bottom-margin">
-      <mat-label>Weapon Name</mat-label>
-      <input matInput formControlName="weaponName" />
-    </mat-form-field>
-    <mat-form-field class="attack-bonus no-bottom-margin">
-      <mat-label>Attack Bonus</mat-label>
-      <input matInput formControlName="attackBonus" />
-    </mat-form-field>
-    <mat-form-field class="damage no-bottom-margin">
-      <mat-label>Damage</mat-label>
-      <input matInput formControlName="damage" />
-    </mat-form-field>
-    <mat-form-field class="critical no-bottom-margin">
-      <mat-label>Critical</mat-label>
-      <input matInput formControlName="critical" />
-    </mat-form-field>
-    <mat-form-field class="range no-bottom-margin">
-      <mat-label>Range</mat-label>
-      <input matInput formControlName="range" />
-    </mat-form-field>
-    <mat-form-field class="type no-bottom-margin">
-      <mat-label>Type</mat-label>
-      <input matInput formControlName="type" />
-    </mat-form-field>
-    <mat-form-field class="notes no-bottom-margin">
-      <mat-label>Notes</mat-label>
-      <textarea
-        matInput
-        cdkTextareaAutosize
-        #autosize="cdkTextareaAutosize"
-        cdkAutosizeMinRows="1"
-        formControlName="notes"
-      ></textarea>
-    </mat-form-field>
-    <div class="ammunition">
-      <mat-form-field class="ammunition-name no-bottom-margin">
-        <mat-label>Ammunition Name</mat-label>
-        <input matInput formControlName="ammunitionName" />
+  @for (key of formKeys; let i = $index; track key) {
+    <ng-container [formGroupName]="key">
+      <mat-form-field class="weapon-name no-bottom-margin">
+        <mat-label>Weapon Name</mat-label>
+        <input matInput formControlName="weaponName" />
       </mat-form-field>
-      <div formGroupName="ammunition">
-        @for(ammo of getAmmoKeys(key); track ammo) {
-        <mat-checkbox class="custom-checkbox" [formControlName]="ammo" />
+      <mat-form-field class="attack-bonus no-bottom-margin">
+        <mat-label>Attack Bonus</mat-label>
+        <input matInput formControlName="attackBonus" />
+      </mat-form-field>
+      <mat-form-field class="damage no-bottom-margin">
+        <mat-label>Damage</mat-label>
+        <input matInput formControlName="damage" />
+      </mat-form-field>
+      <mat-form-field class="critical no-bottom-margin">
+        <mat-label>Critical</mat-label>
+        <input matInput formControlName="critical" />
+      </mat-form-field>
+      <mat-form-field class="range no-bottom-margin">
+        <mat-label>Range</mat-label>
+        <input matInput formControlName="range" />
+      </mat-form-field>
+      <mat-form-field class="type no-bottom-margin">
+        <mat-label>Type</mat-label>
+        <input matInput formControlName="type" />
+      </mat-form-field>
+      <mat-form-field class="notes no-bottom-margin">
+        <mat-label>Notes</mat-label>
+        <textarea
+          matInput
+          cdkTextareaAutosize
+          #autosize="cdkTextareaAutosize"
+          cdkAutosizeMinRows="1"
+          formControlName="notes"
+        ></textarea>
+      </mat-form-field>
+      <div class="ammunition">
+        <mat-form-field class="ammunition-name no-bottom-margin">
+          <mat-label>Ammunition Name</mat-label>
+          <input matInput formControlName="ammunitionName" />
+        </mat-form-field>
+        <div formGroupName="ammunition">
+          @for (ammo of getAmmoKeys(key); track ammo) {
+            <mat-checkbox class="custom-checkbox" [formControlName]="ammo" />
+          }
+        </div>
+        @if (formKeys.length > 1) {
+          <mat-icon (click)="removeWeapon(key)">delete</mat-icon>
+        }
+        @if (i === formKeys.length - 1) {
+          <mat-icon (click)="addWeapon(key)">add</mat-icon>
         }
       </div>
-      @if(formKeys.length > 1) {
-      <mat-icon (click)="removeWeapon(key)">delete</mat-icon>
-      } @if(i === formKeys.length - 1) {
-      <mat-icon (click)="addWeapon(key)">add</mat-icon>
-      }
-    </div>
-  </ng-container>
+    </ng-container>
   }
 </form>
