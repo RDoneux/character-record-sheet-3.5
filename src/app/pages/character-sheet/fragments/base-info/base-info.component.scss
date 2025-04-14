@@ -1,18 +1,23 @@
 form {
   display: grid;
-  grid-template-columns: repeat(16, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 8px;
+  padding: 10px;
 
-  .half-width {
-    grid-column: span 8;
-  }
-
-  .quarter-width {
+  .full-width {
     grid-column: span 4;
   }
 
-  .one-third-width {
+  .half-width {
     grid-column: span 2;
+  }
+
+  .quarter-width {
+    // grid-column: span 4;
+  }
+
+  .one-third-width {
+    grid-column: span 3;
   }
 
   mat-form-field {

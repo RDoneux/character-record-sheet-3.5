@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
-import { RouterModule, RouterOutlet } from '@angular/router';
+import { RouterModule } from '@angular/router';
+import { FragmentMenuComponent } from '../fragment-menu/fragment-menu.component';
 
 @Component({
   selector: 'app-page-menu',
-  imports: [RouterOutlet, RouterModule],
+  imports: [RouterModule, FragmentMenuComponent],
   templateUrl: './page-menu.component.html',
   styleUrl: './page-menu.component.scss',
 })

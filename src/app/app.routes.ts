@@ -11,7 +11,7 @@ export const routes: Routes = [
       ),
   },
   {
-    path: 'page-menu',
+    path: 'builder',
     component: PageMenuComponent,
     loadChildren: () =>
       import('./pages/page-menu/routes/page-menu.routes').then((m) => m.routes),
