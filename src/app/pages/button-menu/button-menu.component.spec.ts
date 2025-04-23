@@ -1,6 +1,7 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ButtonMenuComponent } from './button-menu.component';
+import { ActivatedRoute, RouterModule } from '@angular/router';
 
 describe('ButtonMenuComponent', () => {
   let component: ButtonMenuComponent;
@@ -8,7 +9,17 @@ describe('ButtonMenuComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [ButtonMenuComponent],
+      imports: [ButtonMenuComponent, RouterModule],
+      providers: [
+        {
+          provide: ActivatedRoute,
+          useValue: {
+            snapshot: {
+              params: {},
+            },
+          },
+        },
+      ],
     }).compileComponents();
 
     fixture = TestBed.createComponent(ButtonMenuComponent);
