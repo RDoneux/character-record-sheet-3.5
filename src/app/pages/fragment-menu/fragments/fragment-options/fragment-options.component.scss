@@ -1,5 +1,15 @@
 ul {
   list-style: none;
-  padding: 0;
+  padding: 20px;
   margin: 0;
+
+  background: #2b2a30;
+
+  li {
+    cursor: pointer;
+
+    &:hover {
+      background: #3b3a40;
+    }
+  }
 }

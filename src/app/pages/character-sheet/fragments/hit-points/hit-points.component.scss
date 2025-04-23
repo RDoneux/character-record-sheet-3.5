@@ -1,31 +1,39 @@
 form {
-  // display: grid;
-  // grid-template-columns: repeat(10, 1fr);
-  // gap: 10px;
+  padding: 10px;
+  .grid-layout {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin-bottom: 20px;
 
-  table {
-    width: 100%;
-    table-layout: fixed;
-
-    th {
-      font-size: 12px;
-      &.small-table-column {
-        width: 50px;
-      }
-      &:first-child {
-        width: 100px;
+    p {
+      margin: 5px 0 0 0;
+      &.center {
+        text-align: center;
       }
     }
 
-    mat-form-field {
-      width: 100%;
+    app-title {
+      height: 40px;
     }
   }
-  // .span-2 {
-  //     grid-column: span 2;
-  // }
 
-  // app-title {
-  //     grid-column: 1 / span 2;
+  // table {
+  //   width: 100%;
+  //   table-layout: fixed;
+
+  //   th {
+  //     font-size: 12px;
+  //     &.small-table-column {
+  //       width: 50px;
+  //     }
+  //     &:first-child {
+  //       width: 100px;
+  //     }
+  //   }
+
+  //   mat-form-field {
+  //     width: 100%;
+  //   }
   // }
 }

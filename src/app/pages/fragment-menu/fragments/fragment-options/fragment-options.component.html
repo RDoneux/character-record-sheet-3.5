@@ -1,5 +1,5 @@
 <ul>
   @for (option of fragmentOptions; track option) {
-    <li (click)="onOptionSelected(option)">{{ option }}</li>
+    <li (click)="onOptionSelected(option)">{{ option | kebabToText }}</li>
   }
 </ul>

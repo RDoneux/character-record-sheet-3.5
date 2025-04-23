@@ -1,24 +1,30 @@
 form {
   display: grid;
-  grid-template-columns: repeat(6, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 8px;
+  padding: 10px;
 
   h3 {
     width: 100%;
-    grid-column: span 6;
-    text-align: center;
+    margin: 0;
+    // grid-column: span 6;
+    // text-align: center;
+  }
+
+  mat-form-field {
+    // width: 100%;
   }
 
   .weapon-name {
-    grid-column: 1 / span 3;
+    // grid-column: 1 / span 3;
   }
 
   .notes {
-    grid-column: span 4;
+    // grid-column: span 4;
   }
 
   .ammunition {
-    grid-column: span 6;
+    // grid-column: span 6;
     display: flex;
     gap: 8px;
   }

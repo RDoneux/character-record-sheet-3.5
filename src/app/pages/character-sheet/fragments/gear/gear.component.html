@@ -1,27 +1,27 @@
 <form [formGroup]="gearForm">
   <h3>Gear</h3>
   <div class="armour-form">
-    <p class="title">Armour/Protective Item</p>
-    <p>Type</p>
-    <p>AC Bonus</p>
-    <p>Max Dex</p>
-    <mat-form-field class="no-bottom-margin title">
+    <p class="full-width">Armour/Protective Item</p>
+    <mat-form-field class="no-bottom-margin full-width">
       <input matInput type="number" formControlName="armourName" />
     </mat-form-field>
-    <mat-form-field class="no-bottom-margin">
+    <p class="full-width">Type</p>
+    <mat-form-field class="no-bottom-margin full-width">
       <input matInput type="number" formControlName="armourType" />
     </mat-form-field>
-    <mat-form-field class="no-bottom-margin">
+    <p class="half-width">AC Bonus</p>
+    <p class="half-width">Max Dex</p>
+    <mat-form-field class="no-bottom-margin half-width">
       <input matInput type="number" formControlName="armourAcBonus" />
     </mat-form-field>
-    <mat-form-field class="no-bottom-margin">
+    <mat-form-field class="no-bottom-margin half-width">
       <input matInput type="number" formControlName="armourMaxDex" />
     </mat-form-field>
+
     <p>Check Penalty</p>
     <p>Spell Failure</p>
     <p>Speed</p>
     <p>Weight</p>
-    <p>Special Properties</p>
     <mat-form-field class="no-bottom-margin">
       <input matInput type="number" formControlName="armourCheckPenalty" />
     </mat-form-field>
@@ -34,19 +34,21 @@
     <mat-form-field class="no-bottom-margin">
       <input matInput type="number" formControlName="armourWeight" />
     </mat-form-field>
-    <mat-form-field class="no-bottom-margin">
+    <p class="full-width">Special Properties</p>
+    <mat-form-field class="no-bottom-margin full-width">
       <input matInput type="number" formControlName="armourSpecialProperties" />
     </mat-form-field>
   </div>
 
   <div class="shield-form">
-    <p class="title">Shield / Protective Item</p>
+    <p class="full-width">Shield / Protective Item</p>
+    <mat-form-field class="no-bottom-margin full-width">
+      <input matInput type="number" formControlName="shieldName" />
+    </mat-form-field>
     <p>AC Bonus</p>
     <p>Weight</p>
     <p>Check Penalty</p>
-    <mat-form-field class="no-bottom-margin title">
-      <input matInput type="number" formControlName="shieldName" />
-    </mat-form-field>
+    <p>Spell Failure</p>
     <mat-form-field class="no-bottom-margin">
       <input matInput type="number" formControlName="shieldAcBonus" />
     </mat-form-field>
@@ -56,12 +58,11 @@
     <mat-form-field class="no-bottom-margin">
       <input matInput type="number" formControlName="shieldCheckPenalty" />
     </mat-form-field>
-    <p>Spell Failure</p>
-    <p class="special-properties">Special Properties</p>
     <mat-form-field class="no-bottom-margin">
       <input matInput type="number" formControlName="shieldSpellFailure" />
     </mat-form-field>
-    <mat-form-field class="no-bottom-margin special-properties">
+    <p class="full-width">Special Properties</p>
+    <mat-form-field class="no-bottom-margin full-width">
       <input matInput type="number" formControlName="shieldSpecialProperties" />
     </mat-form-field>
   </div>
@@ -69,20 +70,20 @@
   <div formGroupName="protectiveItems">
     @for (item of protectiveItemKeys; track item) {
       <div [formGroupName]="item" class="protective-item-form">
-        <p class="title">Protective Item</p>
-        <p>AC Bonus</p>
-        <p>Weight</p>
-        <p>Special Properties</p>
-        <mat-form-field class="no-bottom-margin title">
+        <p class="full-width">Protective Item</p>
+        <mat-form-field class="no-bottom-margin full-width">
           <input matInput type="number" formControlName="name" />
         </mat-form-field>
-        <mat-form-field class="no-bottom-margin">
+        <p class="half-width">AC Bonus</p>
+        <p class="half-width">Weight</p>
+        <mat-form-field class="no-bottom-margin half-width">
           <input matInput type="number" formControlName="acBonus" />
         </mat-form-field>
-        <mat-form-field class="no-bottom-margin">
+        <mat-form-field class="no-bottom-margin half-width">
           <input matInput type="number" formControlName="weight" />
         </mat-form-field>
-        <mat-form-field class="no-bottom-margin">
+        <p class="full-width">Special Properties</p>
+        <mat-form-field class="no-bottom-margin full-width">
           <input matInput type="number" formControlName="specialProperties" />
         </mat-form-field>
         <div class="icon-container">

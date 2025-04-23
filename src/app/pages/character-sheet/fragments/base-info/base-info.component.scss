@@ -4,22 +4,6 @@ form {
   gap: 8px;
   padding: 10px;
 
-  .full-width {
-    grid-column: span 4;
-  }
-
-  .half-width {
-    grid-column: span 2;
-  }
-
-  .quarter-width {
-    // grid-column: span 4;
-  }
-
-  .one-third-width {
-    grid-column: span 3;
-  }
-
   mat-form-field {
     overflow: visible !important;
   }

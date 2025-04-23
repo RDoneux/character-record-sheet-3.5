@@ -1,111 +1,66 @@
 <form [formGroup]="hitPointsForm">
-  <table>
-    <thead>
-      <tr>
-        <th></th>
-        <th>Total</th>
-        <th>Wounds / Current HP</th>
-        <th>Non-Lethal Damage</th>
-        <th>Speed</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><app-title fullTitle="Hit Points" shortTitle="HP" /></td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input type="number" matInput formControlName="totalHitPoints" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input type="number" matInput formControlName="currentHitPoints" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input type="number" matInput formControlName="nonLethalDamage" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input type="number" matInput formControlName="speed" />
-          </mat-form-field>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <app-title fullTitle="Hit Points" shortTitle="HP" />
+  <div class="grid-layout">
+    <p class="half-width">Total</p>
+    <p class="half-width">Wounds / Current HP</p>
+    <mat-form-field class="no-bottom-margin half-width">
+      <input type="number" matInput formControlName="totalHitPoints" />
+    </mat-form-field>
+    <mat-form-field class="no-bottom-margin half-width">
+      <input type="number" matInput formControlName="currentHitPoints" />
+    </mat-form-field>
+    <p class="half-width">Non-Lethal Damage</p>
+    <p class="half-width">Speed</p>
+    <mat-form-field class="no-bottom-margin half-width">
+      <input type="number" matInput formControlName="nonLethalDamage" />
+    </mat-form-field>
+    <mat-form-field class="no-bottom-margin half-width">
+      <input type="number" matInput formControlName="speed" />
+    </mat-form-field>
+  </div>
 
-  <table>
-    <thead>
-      <tr>
-        <th></th>
-        <th>Total</th>
-        <th class="small-table-column"></th>
-        <th>Armour Bonus</th>
-        <th>Shield Bonus</th>
-        <th>DEX Modifier</th>
-        <th>Size Modifier</th>
-        <th>Natural Armour</th>
-        <th>Deflection Modifier</th>
-        <th>Misc Modifier</th>
-        <th>Damage Reduction</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td><app-title fullTitle="Armour Class" shortTitle="AC" /></td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input type="number" matInput formControlName="totalArmourClass" />
-          </mat-form-field>
-        </td>
-        <td>= 10 +</td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input type="number" matInput formControlName="armourBonus" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input type="number" matInput formControlName="shieldBonus" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input type="number" matInput formControlName="dexterityModifier" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input type="number" matInput formControlName="sizeModifier" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input type="number" matInput formControlName="naturalArmour" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input
-              type="number"
-              matInput
-              formControlName="deflectionModifier"
-            />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input type="number" matInput formControlName="miscModifier" />
-          </mat-form-field>
-        </td>
-        <td>
-          <mat-form-field class="no-bottom-margin">
-            <input type="number" matInput formControlName="damageReduction" />
-          </mat-form-field>
-        </td>
-      </tr>
-    </tbody>
-  </table>
+  <app-title fullTitle="Armour Class" shortTitle="AC" />
+  <div class="grid-layout">
+    <p class="full-width">Total</p>
+    <mat-form-field class="no-bottom-margin full-width">
+      <input type="number" matInput formControlName="totalArmourClass" />
+    </mat-form-field>
+    <p class="full-width center">= 10 +</p>
+    <p>Armour Bonus</p>
+    <p>Shield Bonus</p>
+    <p>DEX Modifier</p>
+    <p>Size Modifier</p>
+    <mat-form-field class="no-bottom-margin">
+      <input type="number" matInput formControlName="armourBonus" />
+    </mat-form-field>
+    <mat-form-field class="no-bottom-margin">
+      <input type="number" matInput formControlName="shieldBonus" />
+    </mat-form-field>
+    <mat-form-field class="no-bottom-margin">
+      <input type="number" matInput formControlName="dexterityModifier" />
+    </mat-form-field>
+    <mat-form-field class="no-bottom-margin">
+      <input type="number" matInput formControlName="sizeModifier" />
+    </mat-form-field>
+    <p>Natural Armour</p>
+    <p>Deflection Modifier</p>
+    <p>Misc Modifier</p>
+    <p>Damage Reduction</p>
+
+    <mat-form-field class="no-bottom-margin">
+      <input type="number" matInput formControlName="naturalArmour" />
+    </mat-form-field>
+
+    <mat-form-field class="no-bottom-margin">
+      <input type="number" matInput formControlName="deflectionModifier" />
+    </mat-form-field>
+
+    <mat-form-field class="no-bottom-margin">
+      <input type="number" matInput formControlName="miscModifier" />
+    </mat-form-field>
+
+    <mat-form-field class="no-bottom-margin">
+      <input type="number" matInput formControlName="damageReduction" />
+    </mat-form-field>
+  </div>
 </form>

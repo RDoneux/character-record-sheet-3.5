@@ -67,3 +67,15 @@ mat-checkbox.no-border {
 mat-icon {
   cursor: pointer;
 }
+
+.full-width {
+  grid-column: span 4;
+}
+
+.half-width {
+  grid-column: span 2;
+}
+
+.three-quarter-width {
+  grid-column: span 3;
+}
