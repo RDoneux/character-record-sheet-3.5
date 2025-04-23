@@ -7,22 +7,15 @@ import {
   IAbilitiesForm,
 } from './interfaces/i-abilities';
 import { FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { MatFormFieldModule } from '@angular/material/form-field';
-import { MatInputModule } from '@angular/material/input';
 import { debounceTime } from 'rxjs';
-import { TitleComponent } from '../../components/title/title.component';
 import { UtilsService } from '../../../../services/utils.service';
+import { UpperCasePipe } from '@angular/common';
 
 @Component({
   selector: 'app-abilities',
-  imports: [
-    ReactiveFormsModule,
-    MatFormFieldModule,
-    MatInputModule,
-    TitleComponent,
-  ],
-  templateUrl: './abilities.component.html',
-  styleUrl: './abilities.component.scss',
+  imports: [ReactiveFormsModule, UpperCasePipe],
+  templateUrl: './abilities.component_v2.html',
+  styleUrl: './abilities.component_v2.scss',
 })
 export class AbilitiesComponent {
   static readonly STORAGE_KEY = 'abilities';
