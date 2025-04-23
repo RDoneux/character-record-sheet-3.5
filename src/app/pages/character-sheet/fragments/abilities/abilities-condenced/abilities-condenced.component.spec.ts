@@ -1,17 +1,16 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { AbilitiesCondencedComponent } from './abilities-condenced.component';
 
-import { AbilitiesV2Component } from './abilities-condenced.component';
-
-describe('AbilitiesV2Component', () => {
-  let component: AbilitiesV2Component;
-  let fixture: ComponentFixture<AbilitiesV2Component>;
+describe('AbilitiesCondencedComponent', () => {
+  let component: AbilitiesCondencedComponent;
+  let fixture: ComponentFixture<AbilitiesCondencedComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [AbilitiesV2Component],
+      imports: [AbilitiesCondencedComponent],
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AbilitiesV2Component);
+    fixture = TestBed.createComponent(AbilitiesCondencedComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
