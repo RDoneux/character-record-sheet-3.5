@@ -1,0 +1,32 @@
+<div class="hitpoint-container" (click)="openHitPointsDialog()">
+  <h4>HIT POINTS</h4>
+  <small
+    >{{ hitPoints.currentHitPoints }} / {{ hitPoints.totalHitPoints }}</small
+  >
+</div>
+
+<ng-template #hitPointsDialog>
+  <div class="hitpoint-dialog">
+    <h1 mat-dialog-title>HP Management</h1>
+    <div class="content" mat-dialog-content [formGroup]="hitPointsForm">
+      <mat-form-field>
+        <mat-label>Current HP</mat-label>
+        <input matInput formControlName="currentHitPoints" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Max HP</mat-label>
+        <input matInput formControlName="totalHitPoints" />
+      </mat-form-field>
+      <button class="heal" mat-button (click)="onHeal()">HEAL</button>
+      <mat-form-field class="no-bottom-margin damage-output">
+        <mat-label>Damage Amount</mat-label>
+        <input
+          matInput
+          [value]="damageAmount()"
+          (change)="onDamageAmountChange($event)"
+        />
+      </mat-form-field>
+      <button class="damage" mat-button (click)="onDamage()">DAMAGE</button>
+    </div>
+  </div>
+</ng-template>

@@ -24,12 +24,25 @@ $my-theme: mat.m2-define-dark-theme(
 @include mat.all-component-themes($my-theme);
 
 :root {
-  --border-colour: #7c7c7cbe;
+  --border-colour: #535353be;
+  --background-dark: #202020;
+  --success: #4caf50;
+  --danger: #f44336;
+  --warning: #ff9800;
 }
 
 // Include the theme mixins for other components you use here.
 * {
   box-sizing: border-box;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p {
+    margin: 0;
+  }
 }
 
 html,

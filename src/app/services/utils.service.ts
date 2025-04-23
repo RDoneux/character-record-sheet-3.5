@@ -15,4 +15,8 @@ export class UtilsService {
       .replace(/([a-z])([A-Z])/g, '$1 $2') // Add space before uppercase letters
       .replace(/^./, (str) => str.toUpperCase()); // Capitalize the first letter
   }
+
+  getAbilityModifier(abilityScore: number): number {
+    return Math.floor((abilityScore - 10) / 2);
+  }
 }

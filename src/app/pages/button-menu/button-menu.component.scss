@@ -2,6 +2,19 @@ mat-icon {
   overflow: visible;
 }
 
+header {
+  display: grid;
+  grid-template-columns: 24px 1fr 24px;
+  justify-items: center;
+  align-items: center;
+  width: 100%;
+
+  h1 {
+    margin: 0;
+    font-size: 26px;
+  }
+}
+
 .outlet-container {
   padding: 10px;
   width: 100%;

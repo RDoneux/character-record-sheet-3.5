@@ -12,7 +12,7 @@ export const routes: Routes = [
     path: 'abilities',
     loadComponent: () =>
       import(
-        '../../character-sheet/fragments/abilities/abilities.component'
+        '../../character-sheet/fragments/abilities/abilities/abilities.component'
       ).then((m) => m.AbilitiesComponent),
   },
 ];

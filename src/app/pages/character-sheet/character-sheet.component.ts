@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { BaseInfoComponent } from './fragments/base-info/base-info.component';
-import { AbilitiesComponent } from './fragments/abilities/abilities.component';
+import { AbilitiesComponent } from './fragments/abilities/abilities/abilities.component';
 import { HitPointsComponent } from './fragments/hit-points/hit-points.component';
 import { InitiativeComponent } from './fragments/initiative/initiative.component';
 import { SkillsComponent } from './fragments/skills/skills.component';

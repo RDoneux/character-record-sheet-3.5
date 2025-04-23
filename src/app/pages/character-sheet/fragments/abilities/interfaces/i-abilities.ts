@@ -10,7 +10,7 @@ export const Ability = {
 } as const;
 export type Ability = (typeof Ability)[keyof typeof Ability];
 
-interface IAbilityDef {
+export interface IAbilityDef {
   score: number | null;
   modifier: number | null;
   temporaryScore: number | null;

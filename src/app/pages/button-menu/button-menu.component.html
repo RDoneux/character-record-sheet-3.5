@@ -1,5 +1,8 @@
 <div class="outlet-container">
-  <mat-icon [routerLink]="['/']">home</mat-icon>
+  <header>
+    <mat-icon [routerLink]="['/']">home</mat-icon>
+    <h1>{{ title() }}</h1>
+  </header>
   <div class="outlet-wrapper">
     <router-outlet name="button-menu"></router-outlet>
   </div>

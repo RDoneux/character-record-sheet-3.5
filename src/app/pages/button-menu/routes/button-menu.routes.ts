@@ -8,12 +8,20 @@ export const routes: Routes = [
       import('../fragments/menu/menu.component').then((m) => m.MenuComponent),
   },
   {
+    path: 'overview',
+    outlet: 'button-menu',
+    loadComponent: () =>
+      import('../fragments/overview/overview.component').then(
+        (m) => m.OverviewComponent,
+      ),
+  },
+  {
     path: 'abilities',
     outlet: 'button-menu',
     loadComponent: () =>
       import(
-        '../../character-sheet/fragments/abilities/abilities.component'
-      ).then((m) => m.AbilitiesComponent),
+        '../../character-sheet/fragments/abilities/abilities-condenced/abilities-condenced.component'
+      ).then((m) => m.AbilitiesCondencedComponent),
   },
   {
     path: 'attack',

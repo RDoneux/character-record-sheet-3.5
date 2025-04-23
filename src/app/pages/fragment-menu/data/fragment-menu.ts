@@ -4,7 +4,7 @@ import { SKILLS_DEFAULT } from '../../character-sheet/fragments/skills/interface
 export const fragmentMenu: { [key in Fragment]: any } = {
   abilities: () =>
     import(
-      '../../character-sheet/fragments/abilities/abilities.component'
+      '../../character-sheet/fragments/abilities/abilities/abilities.component'
     ).then((m) => m.AbilitiesComponent),
   attacks: () =>
     import('../../character-sheet/fragments/attacks/attacks.component').then(

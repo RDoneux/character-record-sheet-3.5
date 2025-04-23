@@ -1,6 +1,7 @@
 <div
   class="menu-button__container"
   [routerLink]="[{ outlets: { 'button-menu': [formFragment().route] } }]"
+  [queryParams]="{ name: formFragment().displayName }"
 >
   {{ formFragment().displayName }}
 </div>

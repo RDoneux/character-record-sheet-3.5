@@ -1,0 +1,50 @@
+.hitpoint-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+
+  padding: 5px 10px;
+  border-bottom: 1px solid var(--border-colour);
+
+  background-color: var(--background-dark);
+
+  h4 {
+    font-size: 14px;
+  }
+
+  small {
+    font-size: 14px;
+  }
+}
+
+.hitpoint-dialog {
+  padding: 10px;
+
+  h1 {
+    margin-bottom: 20px;
+  }
+  .content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+  }
+
+  .damage-output {
+    grid-column: span 2;
+  }
+
+  button {
+    grid-column: span 2;
+    &.heal {
+      background: var(--success);
+    }
+    &.damage {
+      background: var(--danger);
+    }
+    &.close {
+      background: var(--background-dark);
+    }
+  }
+}

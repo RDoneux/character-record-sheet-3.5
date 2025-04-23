@@ -1,5 +1,8 @@
 <div class="menu__wrapper">
   @for (fragment of fragments; track fragment.displayName) {
-    <app-menu-button [formFragment]="fragment"></app-menu-button>
+    <app-menu-button
+      [class]="fragment.isComposite ? 'menu__button-composite' : ''"
+      [formFragment]="fragment"
+    ></app-menu-button>
   }
 </div>

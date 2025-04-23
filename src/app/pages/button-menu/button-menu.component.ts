@@ -1,6 +1,6 @@
-import { Component, ViewChild, ViewContainerRef } from '@angular/core';
+import { Component, signal, WritableSignal } from '@angular/core';
 import { MatIconModule } from '@angular/material/icon';
-import { RouterLink, RouterModule } from '@angular/router';
+import { ActivatedRoute, RouterLink, RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-button-menu',
@@ -8,4 +8,14 @@ import { RouterLink, RouterModule } from '@angular/router';
   templateUrl: './button-menu.component.html',
   styleUrl: './button-menu.component.scss',
 })
-export class ButtonMenuComponent {}
+export class ButtonMenuComponent {
+  title: WritableSignal<string | null> = signal<string | null>(null);
+
+  constructor(private activatedRoute: ActivatedRoute) {}
+
+  ngOnInit() {
+    this.activatedRoute.queryParams.subscribe((params) => {
+      this.title.set(params['name']);
+    });
+  }
+}
