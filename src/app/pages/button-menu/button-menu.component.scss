@@ -1,0 +1,19 @@
+mat-icon {
+  overflow: visible;
+}
+
+.outlet-container {
+  padding: 10px;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  gap: 20px;
+
+  .outlet-wrapper {
+    width: 100%;
+  }
+}
