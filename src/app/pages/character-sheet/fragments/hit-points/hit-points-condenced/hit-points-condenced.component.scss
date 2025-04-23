@@ -1,9 +1,14 @@
+:host {
+  width: 100%;
+}
+
 .hitpoint-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   width: fit-content;
+  width: 100%;
 
   padding: 5px 10px;
   border-bottom: 1px solid var(--border-colour);
